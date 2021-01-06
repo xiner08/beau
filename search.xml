@@ -4,25 +4,13 @@
   
     
     <entry>
-      <title>js原型、原型链</title>
-      <link href="posts/e69b.html"/>
-      <url>posts/e69b.html</url>
+      <title></title>
+      <link href="posts/0.html"/>
+      <url>posts/0.html</url>
       
-        <content type="html"><![CDATA[<h2 id="一、原型"><a href="#一、原型" class="headerlink" title="一、原型"></a>一、原型</h2><h3 id="1-普通函数调用时，this指向window"><a href="#1-普通函数调用时，this指向window" class="headerlink" title="1.普通函数调用时，this指向window"></a>1.普通函数调用时，this指向window</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">heart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token comment">//Window</span><span class="token punctuation">&#125;</span><span class="token function">heart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> js </category>
-          
-      </categories>
+        <content type="html"><![CDATA[]]></content>
       
       
-        <tags>
-            
-            <tag> js </tag>
-            
-        </tags>
       
     </entry>
     
