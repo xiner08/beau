@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="HTML,CSS,JavaScript,VUE,REACT,node,webpack等">
+    <meta name="keywords" content="js原型与原型链, HTML,CSS,JavaScript,VUE,REACT,node,webpack等">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hearter</title>
+    <title>js原型与原型链 | Hearter</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">js原型与原型链</h1>
                 </div>
             </div>
         </div>
@@ -385,12 +385,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/js/">
+                                <span class="chip bg-color">js</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/js/" class="post-category">
+                                js
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -399,7 +412,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-06
+                    2019-12-30
                 </div>
                 
 
@@ -423,7 +436,64 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="一、原型"><a href="#一、原型" class="headerlink" title="一、原型"></a>一、原型</h2><h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h3><h5 id="原型是一个对象的模板-利用这个模板创建出来的新对象实例都会拥有原型的所有属性和方法"><a href="#原型是一个对象的模板-利用这个模板创建出来的新对象实例都会拥有原型的所有属性和方法" class="headerlink" title="原型是一个对象的模板,利用这个模板创建出来的新对象实例都会拥有原型的所有属性和方法"></a>原型是一个对象的模板,利用这个模板创建出来的新对象实例都会拥有原型的所有属性和方法</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> <span class="token function-variable function">Heart</span> <span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span>age<span class="token punctuation">,</span>type</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token operator">=</span>name
+  <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token operator">=</span>age
+  <span class="token keyword">this</span><span class="token punctuation">.</span>type<span class="token operator">=</span>type
+<span class="token punctuation">&#125;</span>
+<span class="token class-name">Heart</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">say</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">是一个</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">的</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>type<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">var</span> heart1<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Heart</span><span class="token punctuation">(</span><span class="token string">'小明'</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token string">'帅哥'</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> heart2<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Heart</span><span class="token punctuation">(</span><span class="token string">'小红'</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token string">'美女'</span><span class="token punctuation">)</span>
+heart1<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//小明是一个15的帅哥</span>
+heart2<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//小红是一个18的美女</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="并且通过原型创建的新实例是相互独立-互不影响的"><a href="#并且通过原型创建的新实例是相互独立-互不影响的" class="headerlink" title="并且通过原型创建的新实例是相互独立,互不影响的"></a>并且通过原型创建的新实例是相互独立,互不影响的</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> <span class="token function-variable function">Heart</span> <span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span>age<span class="token punctuation">,</span>type</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token operator">=</span>name
+  <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token operator">=</span>age
+  <span class="token keyword">this</span><span class="token punctuation">.</span>type<span class="token operator">=</span>type
+<span class="token punctuation">&#125;</span>
+<span class="token class-name">Heart</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">say</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">是一个</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">的</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>type<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">var</span> heart1<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Heart</span><span class="token punctuation">(</span><span class="token string">'小明'</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token string">'帅哥'</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> heart2<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Heart</span><span class="token punctuation">(</span><span class="token string">'小红'</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token string">'美女'</span><span class="token punctuation">)</span>
+heart1<span class="token punctuation">.</span><span class="token function-variable function">getName</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name
+<span class="token punctuation">&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>heart1<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//小明</span>
+heart2<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//报错 heart2.getName is not a function</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-总结"><a href="#2-总结" class="headerlink" title="2.总结"></a>2.总结</h3><h5 id="原型分为隐士原型-proto-和显示原型-prototype"><a href="#原型分为隐士原型-proto-和显示原型-prototype" class="headerlink" title="原型分为隐士原型(__proto__)和显示原型(prototype)"></a>原型分为隐士原型(__proto__)和显示原型(prototype)</h5><h5 id="隐士原型-proto-是对象拥有的-显示原型-prototype-是构造函数拥有的"><a href="#隐士原型-proto-是对象拥有的-显示原型-prototype-是构造函数拥有的" class="headerlink" title="隐士原型(__proto__)是对象拥有的,显示原型(prototype)是构造函数拥有的"></a>隐士原型(__proto__)是对象拥有的,显示原型(prototype)是构造函数拥有的</h5><h5 id="实例的隐士原型-proto-指向构造函数的显示原型-prototype"><a href="#实例的隐士原型-proto-指向构造函数的显示原型-prototype" class="headerlink" title="实例的隐士原型(__proto__)指向构造函数的显示原型(prototype)"></a>实例的隐士原型(__proto__)指向构造函数的显示原型(prototype)</h5><h5 id="实例的构造器属性-constructor-指向构造函数"><a href="#实例的构造器属性-constructor-指向构造函数" class="headerlink" title="实例的构造器属性(constructor)指向构造函数"></a>实例的构造器属性(constructor)指向构造函数</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> <span class="token function-variable function">Heart</span> <span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span>age<span class="token punctuation">,</span>type</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token operator">=</span>name
+  <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token operator">=</span>age
+  <span class="token keyword">this</span><span class="token punctuation">.</span>type<span class="token operator">=</span>type
+<span class="token punctuation">&#125;</span>
+<span class="token class-name">Heart</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">say</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">是一个</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">的</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>type<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">var</span> heart1<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Heart</span><span class="token punctuation">(</span><span class="token string">'小明'</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token string">'帅哥'</span><span class="token punctuation">)</span>
+heart1<span class="token punctuation">.</span><span class="token function-variable function">getName</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name
+<span class="token punctuation">&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>heart1<span class="token punctuation">.</span>__proto__<span class="token operator">===</span> <span class="token class-name">Heart</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token comment">//true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>heart1<span class="token punctuation">.</span>constructor<span class="token operator">===</span> Heart<span class="token punctuation">)</span> <span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="二、原型链"><a href="#二、原型链" class="headerlink" title="二、原型链"></a>二、原型链</h2><h5 id="1-当访问heart1的属性时-先访问自身是否是否具有该属性"><a href="#1-当访问heart1的属性时-先访问自身是否是否具有该属性" class="headerlink" title="1.当访问heart1的属性时,先访问自身是否是否具有该属性;"></a>1.当访问heart1的属性时,先访问自身是否是否具有该属性;</h5><h5 id="2-若自身没有该属性-就会访问Heart-prototype是否拥有"><a href="#2-若自身没有该属性-就会访问Heart-prototype是否拥有" class="headerlink" title="2.若自身没有该属性,就会访问Heart.prototype是否拥有;"></a>2.若自身没有该属性,就会访问Heart.prototype是否拥有;</h5><h5 id="3-若Heart-prototype没有该属性-就会访问Object-prototype是否拥有"><a href="#3-若Heart-prototype没有该属性-就会访问Object-prototype是否拥有" class="headerlink" title="3.若Heart.prototype没有该属性,就会访问Object.prototype是否拥有;"></a>3.若Heart.prototype没有该属性,就会访问Object.prototype是否拥有;</h5><h5 id="3-若Object-prototype没有该属性-就会返回undefined"><a href="#3-若Object-prototype没有该属性-就会返回undefined" class="headerlink" title="3.若Object.prototype没有该属性,就会返回undefined"></a>3.若Object.prototype没有该属性,就会返回undefined</h5><h5 id="原型链为-heart1—-gt-Heart-prototype—-gt-Object-prototype—-gt-null"><a href="#原型链为-heart1—-gt-Heart-prototype—-gt-Object-prototype—-gt-null" class="headerlink" title="原型链为: heart1—&gt;Heart.prototype—&gt;Object.prototype—&gt;null"></a>原型链为: heart1—&gt;Heart.prototype—&gt;Object.prototype—&gt;null</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> <span class="token function-variable function">Heart</span> <span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span>age<span class="token punctuation">,</span>type</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+   <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token operator">=</span>name
+   <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token operator">=</span>age
+   <span class="token keyword">this</span><span class="token punctuation">.</span>type<span class="token operator">=</span>type
+ <span class="token punctuation">&#125;</span>
+ <span class="token class-name">Heart</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">say</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">是一个</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">的</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>type<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+ <span class="token punctuation">&#125;</span>
+ <span class="token keyword">var</span> heart1<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Heart</span><span class="token punctuation">(</span><span class="token string">'小明'</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token string">'帅哥'</span><span class="token punctuation">)</span>
+ <span class="token keyword">var</span> heart2<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Heart</span><span class="token punctuation">(</span><span class="token string">'小红'</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token string">'美女'</span><span class="token punctuation">)</span>
+ heart1<span class="token punctuation">.</span><span class="token function-variable function">getName</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+   <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name
+ <span class="token punctuation">&#125;</span>
+ console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>heart1<span class="token punctuation">.</span>__proto__<span class="token operator">===</span> <span class="token class-name">Heart</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token comment">//true</span>
+ console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Heart</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>__proto__<span class="token operator">===</span> <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token comment">//true</span>
+ console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>__proto__<span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="原型链反应了对象之间继承的关系"><a href="#原型链反应了对象之间继承的关系" class="headerlink" title="原型链反应了对象之间继承的关系"></a>原型链反应了对象之间继承的关系</h5>
                 
             </div>
             <hr/>
@@ -449,7 +519,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xiner08.github.io/posts/0.html">http://xiner08.github.io/posts/0.html</a>
+                    <a href="http://xiner08.github.io/posts/e69b.html">http://xiner08.github.io/posts/e69b.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -486,7 +556,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/js/">
+                                    <span class="chip bg-color">js</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -533,13 +607,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/posts/0.html">
+                <a href="/posts/e69b.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="js原型与原型链">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">js原型与原型链</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -550,17 +624,29 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-30
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Hearter
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/js/" class="post-category">
+                                    js
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/js/">
+                        <span class="chip bg-color">js</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
