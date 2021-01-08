@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="js闭包, HTML,CSS,JavaScript,VUE,REACT,node,webpack等">
+    <meta name="keywords" content="节流和防抖, HTML,CSS,JavaScript,VUE,REACT,node,webpack等">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>js闭包 | Hearter</title>
+    <title>节流和防抖 | Hearter</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">js闭包</h1>
+                    <h1 class="description center-align post-title">节流和防抖</h1>
                 </div>
             </div>
         </div>
@@ -412,7 +412,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-05
+                    2020-01-12
                 </div>
                 
 
@@ -436,41 +436,80 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、定义"><a href="#一、定义" class="headerlink" title="一、定义"></a>一、定义</h2><h5 id="闭包是指有权访问另一个函数作用域中的变量的函数，也是函数中嵌套函数"><a href="#闭包是指有权访问另一个函数作用域中的变量的函数，也是函数中嵌套函数" class="headerlink" title="闭包是指有权访问另一个函数作用域中的变量的函数，也是函数中嵌套函数"></a>闭包是指有权访问另一个函数作用域中的变量的函数，也是函数中嵌套函数</h5><h5 id="闭包的形成与变量的作用域和变量的生命周期息息相关"><a href="#闭包的形成与变量的作用域和变量的生命周期息息相关" class="headerlink" title="闭包的形成与变量的作用域和变量的生命周期息息相关"></a>闭包的形成与变量的作用域和变量的生命周期息息相关</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">heart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-  <span class="token keyword">var</span> name<span class="token operator">=</span><span class="token string">"xiner"</span><span class="token punctuation">;</span> <span class="token comment">//name是heart 创建的局部变量 </span>
-  <span class="token keyword">function</span> <span class="token function">heartChild</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">//内部函数,闭包</span>
-    <span class="token function">alert</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//调用外部的变量</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token function">heartChild</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span>
-<span class="token function">heart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="在-heartChild-内部可以使用heart-中声明的变量name-这就形成了一个闭包"><a href="#在-heartChild-内部可以使用heart-中声明的变量name-这就形成了一个闭包" class="headerlink" title="在 heartChild()内部可以使用heart()中声明的变量name,这就形成了一个闭包"></a>在 heartChild()内部可以使用heart()中声明的变量name,这就形成了一个闭包</h5><h2 id="二、作用"><a href="#二、作用" class="headerlink" title="二、作用"></a>二、作用</h2><h3 id="1-函数内部调用外部变量"><a href="#1-函数内部调用外部变量" class="headerlink" title="1.函数内部调用外部变量"></a>1.函数内部调用外部变量</h3><h5 id="上面的例子就反映了在heartChild-函数内部并没有name变量，而是访问了heart-里面的内部变量"><a href="#上面的例子就反映了在heartChild-函数内部并没有name变量，而是访问了heart-里面的内部变量" class="headerlink" title="上面的例子就反映了在heartChild()函数内部并没有name变量，而是访问了heart()里面的内部变量"></a>上面的例子就反映了在heartChild()函数内部并没有name变量，而是访问了heart()里面的内部变量</h5><h3 id="2-构造函数的私有属性"><a href="#2-构造函数的私有属性" class="headerlink" title="2.构造函数的私有属性"></a>2.构造函数的私有属性</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Heart</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-  <span class="token keyword">var</span> name<span class="token operator">=</span>name<span class="token punctuation">;</span> <span class="token comment">//name是heart 创建的局部变量 </span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token operator">=</span><span class="token number">15</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">say</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <h5 id="防抖和节流属于性能优化的知识，防止浏览器一直触发同一类事件，而进行的优化方案。"><a href="#防抖和节流属于性能优化的知识，防止浏览器一直触发同一类事件，而进行的优化方案。" class="headerlink" title="防抖和节流属于性能优化的知识，防止浏览器一直触发同一类事件，而进行的优化方案。"></a>防抖和节流属于性能优化的知识，防止浏览器一直触发同一类事件，而进行的优化方案。</h5><h2 id="一、防抖-debounce"><a href="#一、防抖-debounce" class="headerlink" title="一、防抖 debounce"></a>一、防抖 debounce</h2><h5 id="对于短时间内连续触发的事件，防抖就是让某个时间期限内，事件处理函数只执行一次"><a href="#对于短时间内连续触发的事件，防抖就是让某个时间期限内，事件处理函数只执行一次" class="headerlink" title="对于短时间内连续触发的事件，防抖就是让某个时间期限内，事件处理函数只执行一次"></a>对于短时间内连续触发的事件，防抖就是让某个时间期限内，事件处理函数只执行一次</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/*
+  fn 指的是执行的函数
+  delay 指的是延迟的时间
+*/</span>
+<span class="token keyword">function</span> <span class="token function">debounce</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span>delay</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> timer<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    timer <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>fn<span class="token punctuation">,</span>delay<span class="token operator">||</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
-<span class="token keyword">let</span> heart1<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Heart</span><span class="token punctuation">(</span><span class="token string">'xiner'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-heart1<span class="token punctuation">.</span>age<span class="token operator">+=</span><span class="token number">1</span> 
-heart1<span class="token punctuation">.</span>name<span class="token operator">=</span><span class="token string">'xin'</span>
-heart1<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//xiner  name就是构造函数的私有属性，不能改变,age就可以改变</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>heart1<span class="token punctuation">)</span>  <span class="token comment">//age=16</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-延长变量生命周期"><a href="#3-延长变量生命周期" class="headerlink" title="3.延长变量生命周期"></a>3.延长变量生命周期</h3><h5 id="在函数内部的变量-原来在函数执行之后-都会被销毁-而由于闭包-变量永远会被保存下来-延长了生命周期"><a href="#在函数内部的变量-原来在函数执行之后-都会被销毁-而由于闭包-变量永远会被保存下来-延长了生命周期" class="headerlink" title="在函数内部的变量,原来在函数执行之后,都会被销毁,而由于闭包,变量永远会被保存下来,延长了生命周期"></a>在函数内部的变量,原来在函数执行之后,都会被销毁,而由于闭包,变量永远会被保存下来,延长了生命周期</h5><h2 id="三、闭包的应用"><a href="#三、闭包的应用" class="headerlink" title="三、闭包的应用"></a>三、闭包的应用</h2><h5 id="axios的请求回调"><a href="#axios的请求回调" class="headerlink" title="axios的请求回调"></a>axios的请求回调</h5><h5 id="事件绑定的回调"><a href="#事件绑定的回调" class="headerlink" title="事件绑定的回调"></a>事件绑定的回调</h5><h5 id="setTimeout的延时回调"><a href="#setTimeout的延时回调" class="headerlink" title="setTimeout的延时回调"></a>setTimeout的延时回调</h5><h5 id="函数内部返回一个匿名函数"><a href="#函数内部返回一个匿名函数" class="headerlink" title="函数内部返回一个匿名函数"></a>函数内部返回一个匿名函数</h5><h5 id="函数节流和防抖等等"><a href="#函数节流和防抖等等" class="headerlink" title="函数节流和防抖等等"></a>函数节流和防抖等等</h5><h2 id="四、内存泄漏"><a href="#四、内存泄漏" class="headerlink" title="四、内存泄漏"></a>四、内存泄漏</h2><h5 id="由于IE的js对象和DOM对象使用不同的垃圾收集方法，因此闭包在IE中会导致内存泄露问题，也就是无法销毁在内存中的dom元素。因此我们在不需要使用dom时，应将dom解除引用来避免内存泄露"><a href="#由于IE的js对象和DOM对象使用不同的垃圾收集方法，因此闭包在IE中会导致内存泄露问题，也就是无法销毁在内存中的dom元素。因此我们在不需要使用dom时，应将dom解除引用来避免内存泄露" class="headerlink" title="由于IE的js对象和DOM对象使用不同的垃圾收集方法，因此闭包在IE中会导致内存泄露问题，也就是无法销毁在内存中的dom元素。因此我们在不需要使用dom时，应将dom解除引用来避免内存泄露"></a>由于IE的js对象和DOM对象使用不同的垃圾收集方法，因此闭包在IE中会导致内存泄露问题，也就是无法销毁在内存中的dom元素。因此我们在不需要使用dom时，应将dom解除引用来避免内存泄露</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token comment">// div用完之后一直存在内存中，无法被回收</span>
-    <span class="token keyword">var</span> div <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    div<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>div<span class="token punctuation">.</span>innerHTML<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 这里用div导致内存泄露</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">scrollTop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> scrollTop<span class="token operator">=</span>document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>scrollTop <span class="token operator">||</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>scrollTop<span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>scrollTop<span class="token punctuation">)</span>
 <span class="token punctuation">&#125;</span>
-<span class="token keyword">function</span> <span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>    
-    <span class="token keyword">var</span> div <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
-    <span class="token keyword">var</span> test <span class="token operator">=</span> div<span class="token punctuation">.</span>innerHTML<span class="token punctuation">;</span>
-    div<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>test<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-    div <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> <span class="token comment">//div用完后,使其制空，避免泄露</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">// window.onscroll=scrollTop //一直在打印</span>
+window<span class="token punctuation">.</span>onscroll<span class="token operator">=</span><span class="token function">debounce</span><span class="token punctuation">(</span>scrollTop<span class="token punctuation">,</span><span class="token number">500</span><span class="token punctuation">)</span> <span class="token comment">//滚动停止后打印</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="二、节流-throttle"><a href="#二、节流-throttle" class="headerlink" title="二、节流 throttle"></a>二、节流 throttle</h2><h5 id="如果短时间大量触发同一事件，在函数执行一次之后，该函数在指定的时间期限内不再工作，直到过了这段时间才生效"><a href="#如果短时间大量触发同一事件，在函数执行一次之后，该函数在指定的时间期限内不再工作，直到过了这段时间才生效" class="headerlink" title="如果短时间大量触发同一事件，在函数执行一次之后，该函数在指定的时间期限内不再工作，直到过了这段时间才生效"></a>如果短时间大量触发同一事件，在函数执行一次之后，该函数在指定的时间期限内不再工作，直到过了这段时间才生效</h5><h5 id="用setTimeout实现"><a href="#用setTimeout实现" class="headerlink" title="用setTimeout实现"></a>用setTimeout实现</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/*
+  fn 指的是执行的函数
+  delay 指的是延迟的时间
+*/</span>
+<span class="token keyword">function</span> <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span>delay</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> timer<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>timer<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    timer<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//如果里面用到this，记得改变this 指向</span>
+      timer<span class="token operator">=</span><span class="token boolean">true</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>delay<span class="token operator">||</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">function</span> <span class="token function">scrollTop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> scrollTop<span class="token operator">=</span>document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>scrollTop <span class="token operator">||</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>scrollTop<span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>scrollTop<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// window.onscroll=scrollTop //一直在打印</span>
+window<span class="token punctuation">.</span>onscroll<span class="token operator">=</span><span class="token function">throttle</span><span class="token punctuation">(</span>scrollTop<span class="token punctuation">,</span><span class="token number">500</span><span class="token punctuation">)</span> <span class="token comment">//0.5s的间隔输出</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="用-new-Date实现"><a href="#用-new-Date实现" class="headerlink" title="用 new Date实现"></a>用 new Date实现</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js">  <span class="token comment">/*
+    fn 指的是执行的函数
+    delay 指的是延迟的时间
+  */</span>
+  <span class="token keyword">function</span> <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span>delay</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> timer<span class="token punctuation">;</span>
+    <span class="token keyword">let</span> start<span class="token operator">=</span><span class="token operator">+</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//拿到开始的时间戳</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      <span class="token keyword">let</span> current<span class="token operator">=</span><span class="token operator">+</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//拿到当前的时间戳</span>
+      <span class="token keyword">let</span> that<span class="token operator">=</span><span class="token keyword">this</span><span class="token punctuation">;</span> <span class="token comment">//保存当前的this</span>
+      <span class="token keyword">let</span> args<span class="token operator">=</span>arguments<span class="token punctuation">;</span> <span class="token comment">//传入的参数</span>
+      <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>current<span class="token operator">-</span>start<span class="token operator">>=</span>delay<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>that<span class="token punctuation">,</span>args<span class="token punctuation">)</span>
+        start <span class="token operator">=</span>current
+      <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+        timer<span class="token operator">=</span><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+          <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>that<span class="token punctuation">,</span>args<span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>delay<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token keyword">function</span> <span class="token function">scrollTop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> scrollTop<span class="token operator">=</span>document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>scrollTop <span class="token operator">||</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>scrollTop<span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>scrollTop<span class="token punctuation">,</span><span class="token string">'555'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token comment">// window.onscroll=scrollTop //一直在打印</span>
+window<span class="token punctuation">.</span>onscroll<span class="token operator">=</span><span class="token function">throttle</span><span class="token punctuation">(</span>scrollTop<span class="token punctuation">,</span><span class="token number">500</span><span class="token punctuation">)</span> <span class="token comment">//0.5s的间隔输出</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="总的来说-防抖是将多次执行变为只执行一次，节流是将多次执行变为每隔一段时间执行。"><a href="#总的来说-防抖是将多次执行变为只执行一次，节流是将多次执行变为每隔一段时间执行。" class="headerlink" title="总的来说:防抖是将多次执行变为只执行一次，节流是将多次执行变为每隔一段时间执行。"></a>总的来说:防抖是将多次执行变为只执行一次，节流是将多次执行变为每隔一段时间执行。</h5><h2 id="三、应用场景"><a href="#三、应用场景" class="headerlink" title="三、应用场景"></a>三、应用场景</h2><h5 id="防抖"><a href="#防抖" class="headerlink" title="防抖:"></a>防抖:</h5><h5 id="search搜索联想，用户在不断输入值时，用防抖来节约请求资源。"><a href="#search搜索联想，用户在不断输入值时，用防抖来节约请求资源。" class="headerlink" title="search搜索联想，用户在不断输入值时，用防抖来节约请求资源。"></a>search搜索联想，用户在不断输入值时，用防抖来节约请求资源。</h5><h5 id="window触发resize的时候，不断的调整浏览器窗口大小会不断的触发这个事件，用防抖来让其只触发一次"><a href="#window触发resize的时候，不断的调整浏览器窗口大小会不断的触发这个事件，用防抖来让其只触发一次" class="headerlink" title="window触发resize的时候，不断的调整浏览器窗口大小会不断的触发这个事件，用防抖来让其只触发一次"></a>window触发resize的时候，不断的调整浏览器窗口大小会不断的触发这个事件，用防抖来让其只触发一次</h5><h5 id="节流"><a href="#节流" class="headerlink" title="节流:"></a>节流:</h5><h5 id="鼠标不断点击触发，mousedown-单位时间内只触发一次"><a href="#鼠标不断点击触发，mousedown-单位时间内只触发一次" class="headerlink" title="鼠标不断点击触发，mousedown(单位时间内只触发一次)"></a>鼠标不断点击触发，mousedown(单位时间内只触发一次)</h5><h5 id="监听滚动事件，比如是否滑到底部自动加载更多，用throttle来判断"><a href="#监听滚动事件，比如是否滑到底部自动加载更多，用throttle来判断" class="headerlink" title="监听滚动事件，比如是否滑到底部自动加载更多，用throttle来判断"></a>监听滚动事件，比如是否滑到底部自动加载更多，用throttle来判断</h5>
                 
             </div>
             <hr/>
@@ -496,7 +535,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xiner08.github.io/posts/7d8b.html">http://xiner08.github.io/posts/7d8b.html</a>
+                    <a href="http://xiner08.github.io/posts/1f25.html">http://xiner08.github.io/posts/1f25.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -583,13 +622,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/1f25.html">
+                <a href="/posts/e9c3.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="节流和防抖">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="简单实现vue源码">
                         
-                        <span class="card-title">节流和防抖</span>
+                        <span class="card-title">简单实现vue源码</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -600,14 +639,14 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-12
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/js/" class="post-category">
-                                    js
+                            <a href="/categories/vue/" class="post-category">
+                                    vue
                                 </a>
                             
                             
@@ -617,8 +656,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/js/">
-                        <span class="chip bg-color">js</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
@@ -632,13 +671,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/e69b.html">
+                <a href="/posts/7d8b.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="js原型与原型链">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="js闭包">
                         
-                        <span class="card-title">js原型与原型链</span>
+                        <span class="card-title">js闭包</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -649,7 +688,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-05
                             </span>
                         <span class="publish-author">
                             
