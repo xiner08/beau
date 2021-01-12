@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="leetcode0第7题:整数反转, HTML,CSS,JavaScript,VUE,REACT,node,webpack等">
+    <meta name="keywords" content="leetcode0第2题:两数相加, HTML,CSS,JavaScript,VUE,REACT,node,webpack等">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>leetcode0第7题:整数反转 | Hearter</title>
+    <title>leetcode0第2题:两数相加 | Hearter</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">leetcode0第7题:整数反转</h1>
+                    <h1 class="description center-align post-title">leetcode0第2题:两数相加</h1>
                 </div>
             </div>
         </div>
@@ -412,7 +412,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-21
+                    2020-05-22
                 </div>
                 
 
@@ -436,38 +436,40 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="给出一个-32-位的有符号整数，你需要将这个整数中每位上的数字进行反转"><a href="#给出一个-32-位的有符号整数，你需要将这个整数中每位上的数字进行反转" class="headerlink" title="给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转."></a>给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转.</h5><h5 id="注意-假设我们的环境只能存储得下-32-位的有符号整数，则其数值范围为-−2-31-2-31-−-1-。请根据这个假设，如果反转后整数溢出那么就返回-0。"><a href="#注意-假设我们的环境只能存储得下-32-位的有符号整数，则其数值范围为-−2-31-2-31-−-1-。请根据这个假设，如果反转后整数溢出那么就返回-0。" class="headerlink" title="注意:假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−2^31,  2^31 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。"></a>注意:假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−2^31,  2^31 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。</h5><h2 id="一、利用栈的原理来求解"><a href="#一、利用栈的原理来求解" class="headerlink" title="一、利用栈的原理来求解"></a>一、利用栈的原理来求解</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">reserve</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-  <span class="token keyword">let</span> max_int<span class="token operator">=</span><span class="token number">2</span><span class="token operator">**</span><span class="token number">31</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> min_int<span class="token operator">=</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">**</span><span class="token number">31</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> ret<span class="token operator">=</span><span class="token number">0</span>
-  <span class="token keyword">if</span><span class="token punctuation">(</span>x<span class="token operator">></span>max_int<span class="token operator">||</span>x<span class="token operator">&lt;</span>min_int<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span> 
-  <span class="token punctuation">&#125;</span>
-  <span class="token keyword">while</span> <span class="token punctuation">(</span>x<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">//栈的原理 一个一个出栈</span>
-    <span class="token keyword">const</span> value<span class="token operator">=</span>x<span class="token operator">%</span><span class="token number">10</span><span class="token punctuation">;</span> <span class="token comment">//拿到最后面的余数</span>
-    x<span class="token operator">=</span><span class="token operator">~</span><span class="token operator">~</span><span class="token punctuation">(</span>x<span class="token operator">/</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token comment">//~~ 相当于向下取整</span>
-    ret <span class="token operator">=</span><span class="token number">10</span><span class="token operator">*</span>ret<span class="token operator">+</span>value<span class="token punctuation">;</span> <span class="token comment">//将余数拼接起来</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token keyword">if</span><span class="token punctuation">(</span>ret<span class="token operator">></span>max_int<span class="token operator">||</span>ret<span class="token operator">&lt;</span>min_int<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token keyword">return</span> ret<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二、利用js的-或来求解"><a href="#二、利用js的-或来求解" class="headerlink" title="二、利用js的|或来求解"></a>二、利用js的|或来求解</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">reverse</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span>x <span class="token operator">!==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        res <span class="token operator">=</span> res <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> x <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">;</span>
-        x <span class="token operator">=</span> <span class="token punctuation">(</span>x <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// |强制转换32位有符号的整数</span>
+                <h5 id="给你两个非空的链表，表示两个非负的整数。它们每位数字都是按照逆序的方式存储的，并且每个节点只能存储一位数字。请你将两个数相加，并以相同形式返回一个表示和的链表。"><a href="#给你两个非空的链表，表示两个非负的整数。它们每位数字都是按照逆序的方式存储的，并且每个节点只能存储一位数字。请你将两个数相加，并以相同形式返回一个表示和的链表。" class="headerlink" title="给你两个非空的链表，表示两个非负的整数。它们每位数字都是按照逆序的方式存储的，并且每个节点只能存储一位数字。请你将两个数相加，并以相同形式返回一个表示和的链表。"></a>给你两个非空的链表，表示两个非负的整数。它们每位数字都是按照逆序的方式存储的，并且每个节点只能存储一位数字。请你将两个数相加，并以相同形式返回一个表示和的链表。</h5><h5 id="实例"><a href="#实例" class="headerlink" title="实例:"></a>实例:</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js">输入：l1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> l2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
+输出：<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">]</span>
+解释：<span class="token number">342</span> <span class="token operator">+</span> <span class="token number">465</span> <span class="token operator">=</span> <span class="token number">807.</span>
+
+输入：l1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">,</span> l2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span>
+输出：<span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="通用解法"><a href="#通用解法" class="headerlink" title="通用解法"></a>通用解法</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) &#123;
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * &#125;
+ */</span>
+<span class="token comment">/**
+ * @param &#123;ListNode&#125; l1
+ * @param &#123;ListNode&#125; l2
+ * @return &#123;ListNode&#125;
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">addTwoNumbers</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">l1<span class="token punctuation">,</span> l2</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> add<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">//来判断是否进位</span>
+    <span class="token keyword">let</span> sum <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span><span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建一个空的链表</span>
+    <span class="token keyword">let</span> head<span class="token operator">=</span>sum<span class="token punctuation">;</span> <span class="token comment">//</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>add <span class="token operator">||</span> l1 <span class="token operator">||</span> l2<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> val1<span class="token operator">=</span>l1<span class="token operator">!==</span><span class="token keyword">null</span><span class="token operator">?</span>l1<span class="token punctuation">.</span>val<span class="token operator">:</span><span class="token number">0</span> <span class="token comment">//判断l1是否有值</span>
+    <span class="token keyword">let</span> val2<span class="token operator">=</span>l2<span class="token operator">!==</span><span class="token keyword">null</span><span class="token operator">?</span>l2<span class="token punctuation">.</span>val<span class="token operator">:</span><span class="token number">0</span> <span class="token comment">//判断l2是否有值</span>
+    <span class="token keyword">let</span> r1<span class="token operator">=</span>val1 <span class="token operator">+</span> val2 <span class="token operator">+</span> add <span class="token comment">//将l1、l2和进位相加</span>
+    add<span class="token operator">=</span><span class="token punctuation">(</span>r1<span class="token operator">>=</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token operator">?</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">0</span>  <span class="token comment">//判断r1是否大于0，看是否进位</span>
+    sum<span class="token punctuation">.</span>next<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span>r1 <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token comment">//取r1的个位数</span>
+    sum<span class="token operator">=</span>sum<span class="token punctuation">.</span>next 
+    <span class="token keyword">if</span><span class="token punctuation">(</span>l1<span class="token punctuation">)</span> l1<span class="token operator">=</span>l1<span class="token punctuation">.</span>next <span class="token comment">//判断下一个指针是否存在</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>l2<span class="token punctuation">)</span> l2<span class="token operator">=</span>l2<span class="token punctuation">.</span>next 
     <span class="token punctuation">&#125;</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span>res <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">===</span> res <span class="token operator">?</span> res <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="三、将整数转化为字符串-再利用js自身的方法来实现"><a href="#三、将整数转化为字符串-再利用js自身的方法来实现" class="headerlink" title="三、将整数转化为字符串,再利用js自身的方法来实现"></a>三、将整数转化为字符串,再利用js自身的方法来实现</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">reverse</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">let</span> max<span class="token operator">=</span><span class="token number">2</span><span class="token operator">**</span><span class="token number">31</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> min<span class="token operator">=</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">**</span><span class="token number">31</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> res<span class="token punctuation">;</span>
-  res<span class="token operator">=</span><span class="token punctuation">(</span>x<span class="token operator">></span><span class="token number">0</span><span class="token operator">?</span><span class="token number">1</span><span class="token operator">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token function">Number</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-  <span class="token keyword">return</span> res<span class="token operator">></span>max<span class="token operator">||</span>res<span class="token operator">&lt;</span>min<span class="token operator">?</span><span class="token number">0</span><span class="token operator">:</span>res
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">return</span> head<span class="token punctuation">.</span>next <span class="token comment">//返回头部</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -494,7 +496,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xiner08.github.io/posts/9923.html">http://xiner08.github.io/posts/9923.html</a>
+                    <a href="http://xiner08.github.io/posts/44cd.html">http://xiner08.github.io/posts/44cd.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -581,13 +583,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/44cd.html">
+                <a href="/posts/e9c3.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="leetcode0第2题:两数相加">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="简单实现vue源码">
                         
-                        <span class="card-title">leetcode0第2题:两数相加</span>
+                        <span class="card-title">简单实现vue源码</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -598,14 +600,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-22
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-12
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/leetcode/" class="post-category">
-                                    leetcode
+                            <a href="/categories/vue/" class="post-category">
+                                    vue
                                 </a>
                             
                             
@@ -615,8 +617,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leetcode/">
-                        <span class="chip bg-color">leetcode</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
@@ -630,13 +632,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/d10e.html">
+                <a href="/posts/9923.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="leetcode0第1题:两数之和">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="leetcode0第7题:整数反转">
                         
-                        <span class="card-title">leetcode0第1题:两数之和</span>
+                        <span class="card-title">leetcode0第7题:整数反转</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -647,7 +649,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-21
                             </span>
                         <span class="publish-author">
                             
