@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="两数之和, HTML,CSS,JavaScript,VUE,REACT,node,webpack等">
+    <meta name="keywords" content="整数反转, HTML,CSS,JavaScript,VUE,REACT,node,webpack等">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>两数之和 | Hearter</title>
+    <title>整数反转 | Hearter</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">两数之和</h1>
+                    <h1 class="description center-align post-title">整数反转</h1>
                 </div>
             </div>
         </div>
@@ -412,7 +412,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-20
+                    2020-05-21
                 </div>
                 
 
@@ -436,37 +436,39 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="给定一个整数数组-nums-和一个整数目标值-target，请你在该数组中找出和为目标值的那两个整数，并返回它们的数组下标。你可以假设每种输入只会对应一个答案。但是-数组中同一个元素不能使用两遍。"><a href="#给定一个整数数组-nums-和一个整数目标值-target，请你在该数组中找出和为目标值的那两个整数，并返回它们的数组下标。你可以假设每种输入只会对应一个答案。但是-数组中同一个元素不能使用两遍。" class="headerlink" title="给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回它们的数组下标。你可以假设每种输入只会对应一个答案。但是,数组中同一个元素不能使用两遍。"></a>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回它们的数组下标。你可以假设每种输入只会对应一个答案。但是,数组中同一个元素不能使用两遍。</h5><h2 id="一、直接遍历"><a href="#一、直接遍历" class="headerlink" title="一、直接遍历"></a>一、直接遍历</h2><h5 id="直接遍历两边-第一次遍历找x-第二次遍历找target-x-然后输出结果-复杂度-O-n-2"><a href="#直接遍历两边-第一次遍历找x-第二次遍历找target-x-然后输出结果-复杂度-O-n-2" class="headerlink" title="直接遍历两边,第一次遍历找x,第二次遍历找target-x,然后输出结果.复杂度 O(n^2)"></a>直接遍历两边,第一次遍历找x,第二次遍历找target-x,然后输出结果.复杂度 O(n^2)</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">twoSum</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">nums<span class="token punctuation">,</span> target</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">// 直接 遍历两遍得出结果</span>
-  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-      <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+</span>nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">===</span>target<span class="token operator">&amp;&amp;</span>i<span class="token operator">!=</span>j<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token punctuation">[</span>i<span class="token punctuation">,</span>j<span class="token punctuation">]</span>
-      <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
+                <h5 id="给出一个-32-位的有符号整数，你需要将这个整数中每位上的数字进行反转"><a href="#给出一个-32-位的有符号整数，你需要将这个整数中每位上的数字进行反转" class="headerlink" title="给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转."></a>给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转.</h5><h5 id="注意-假设我们的环境只能存储得下-32-位的有符号整数，则其数值范围为-−2-31-2-31-−-1-。请根据这个假设，如果反转后整数溢出那么就返回-0。"><a href="#注意-假设我们的环境只能存储得下-32-位的有符号整数，则其数值范围为-−2-31-2-31-−-1-。请根据这个假设，如果反转后整数溢出那么就返回-0。" class="headerlink" title="注意:假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−2^31,  2^31 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。"></a>注意:假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−2^31,  2^31 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。</h5><h2 id="一、利用栈的原理来求解"><a href="#一、利用栈的原理来求解" class="headerlink" title="一、利用栈的原理来求解"></a>一、利用栈的原理来求解</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">reserve</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> max_int<span class="token operator">=</span><span class="token number">2</span><span class="token operator">**</span><span class="token number">31</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> min_int<span class="token operator">=</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">**</span><span class="token number">31</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> ret<span class="token operator">=</span><span class="token number">0</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>x<span class="token operator">></span>max_int<span class="token operator">||</span>x<span class="token operator">&lt;</span>min_int<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span> 
   <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二、obj"><a href="#二、obj" class="headerlink" title="二、obj"></a>二、obj</h2><h5 id="遍历一遍-使用对象作为中间件-把target-x保存下来-复杂度-O-n"><a href="#遍历一遍-使用对象作为中间件-把target-x保存下来-复杂度-O-n" class="headerlink" title="遍历一遍,使用对象作为中间件,把target-x保存下来.复杂度 O(n)"></a>遍历一遍,使用对象作为中间件,把target-x保存下来.复杂度 O(n)</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">twoSum</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">nums<span class="token punctuation">,</span> target</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">let</span> obj<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">const</span> num<span class="token operator">=</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>num <span class="token keyword">in</span> obj<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-      <span class="token keyword">return</span> <span class="token punctuation">[</span>obj<span class="token punctuation">[</span>num<span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token punctuation">]</span>
-    <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
-      obj<span class="token punctuation">[</span>target<span class="token operator">-</span>num<span class="token punctuation">]</span><span class="token operator">=</span>i
-    <span class="token punctuation">&#125;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>x<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">//栈的原理 一个一个出栈</span>
+    <span class="token keyword">const</span> value<span class="token operator">=</span>x<span class="token operator">%</span><span class="token number">10</span><span class="token punctuation">;</span> <span class="token comment">//拿到最后面的余数</span>
+    x<span class="token operator">=</span><span class="token operator">~</span><span class="token operator">~</span><span class="token punctuation">(</span>x<span class="token operator">/</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token comment">//~~ 相当于向下取整</span>
+    ret <span class="token operator">=</span><span class="token number">10</span><span class="token operator">*</span>ret<span class="token operator">+</span>value<span class="token punctuation">;</span> <span class="token comment">//将余数拼接起来</span>
   <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="三、map"><a href="#三、map" class="headerlink" title="三、map"></a>三、map</h2><h5 id="遍历一遍-使用map作为中间件-把target-x保存下来-复杂度-O-n"><a href="#遍历一遍-使用map作为中间件-把target-x保存下来-复杂度-O-n" class="headerlink" title="遍历一遍,使用map作为中间件,把target-x保存下来.复杂度 O(n)"></a>遍历一遍,使用map作为中间件,把target-x保存下来.复杂度 O(n)</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">twoSum</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">nums<span class="token punctuation">,</span> target</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">let</span> map<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-      <span class="token keyword">return</span> <span class="token punctuation">[</span>map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>i<span class="token punctuation">]</span>
-    <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
-     map<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>target<span class="token operator">-</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>ret<span class="token operator">></span>max_int<span class="token operator">||</span>ret<span class="token operator">&lt;</span>min_int<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span>
   <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  <span class="token keyword">return</span> ret<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="二、利用js的-或来求解"><a href="#二、利用js的-或来求解" class="headerlink" title="二、利用js的|或来求解"></a>二、利用js的|或来求解</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">reverse</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>x <span class="token operator">!==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        res <span class="token operator">=</span> res <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> x <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">;</span>
+        x <span class="token operator">=</span> <span class="token punctuation">(</span>x <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// |强制转换32位有符号的整数</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>res <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">===</span> res <span class="token operator">?</span> res <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="三、将整数转化为字符串-再利用js自身的方法来实现"><a href="#三、将整数转化为字符串-再利用js自身的方法来实现" class="headerlink" title="三、将整数转化为字符串,再利用js自身的方法来实现"></a>三、将整数转化为字符串,再利用js自身的方法来实现</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">reverse</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> max<span class="token operator">=</span><span class="token number">2</span><span class="token operator">**</span><span class="token number">31</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> min<span class="token operator">=</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">**</span><span class="token number">31</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> res<span class="token punctuation">;</span>
+  res<span class="token operator">=</span><span class="token punctuation">(</span>x<span class="token operator">></span><span class="token number">0</span><span class="token operator">?</span><span class="token number">1</span><span class="token operator">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token function">Number</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> res<span class="token operator">></span>max<span class="token operator">||</span>res<span class="token operator">&lt;</span>min<span class="token operator">?</span><span class="token number">0</span><span class="token operator">:</span>res
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
@@ -492,7 +494,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xiner08.github.io/posts/d10e.html">http://xiner08.github.io/posts/d10e.html</a>
+                    <a href="http://xiner08.github.io/posts/9923.html">http://xiner08.github.io/posts/9923.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -579,13 +581,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/9923.html">
+                <a href="/posts/e9c3.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="整数反转">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="简单实现vue源码">
                         
-                        <span class="card-title">整数反转</span>
+                        <span class="card-title">简单实现vue源码</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -596,8 +598,57 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-21
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-12
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/vue/" class="post-category">
+                                    vue
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/d10e.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="两数之和">
+                        
+                        <span class="card-title">两数之和</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -615,55 +666,6 @@
                     
                     <a href="/tags/leetcode/">
                         <span class="chip bg-color">leetcode</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/ffd3.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="js继承">
-                        
-                        <span class="card-title">js继承</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-19
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/js/" class="post-category">
-                                    js
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/js/">
-                        <span class="chip bg-color">js</span>
                     </a>
                     
                 </div>
