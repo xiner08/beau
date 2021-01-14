@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="leetcode第1题:两数之和, HTML,CSS,JavaScript,VUE,REACT,node,webpack等">
+    <meta name="keywords" content="js深浅copy, HTML,CSS,JavaScript,VUE,REACT,node,webpack等">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>leetcode第1题:两数之和 | Hearter</title>
+    <title>js深浅copy | Hearter</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">leetcode第1题:两数之和</h1>
+                    <h1 class="description center-align post-title">js深浅copy</h1>
                 </div>
             </div>
         </div>
@@ -387,8 +387,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/leetcode/">
-                                <span class="chip bg-color">leetcode</span>
+                            <a href="/tags/js/">
+                                <span class="chip bg-color">js</span>
                             </a>
                         
                     </div>
@@ -399,8 +399,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/leetcode/" class="post-category">
-                                leetcode
+                            <a href="/categories/js/" class="post-category">
+                                js
                             </a>
                         
                     </div>
@@ -412,7 +412,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-20
+                    2020-01-25
                 </div>
                 
 
@@ -436,37 +436,60 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="给定一个整数数组-nums-和一个整数目标值-target，请你在该数组中找出和为目标值的那两个整数，并返回它们的数组下标。你可以假设每种输入只会对应一个答案。但是-数组中同一个元素不能使用两遍。"><a href="#给定一个整数数组-nums-和一个整数目标值-target，请你在该数组中找出和为目标值的那两个整数，并返回它们的数组下标。你可以假设每种输入只会对应一个答案。但是-数组中同一个元素不能使用两遍。" class="headerlink" title="给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回它们的数组下标。你可以假设每种输入只会对应一个答案。但是,数组中同一个元素不能使用两遍。"></a>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回它们的数组下标。你可以假设每种输入只会对应一个答案。但是,数组中同一个元素不能使用两遍。</h5><h2 id="一、直接遍历"><a href="#一、直接遍历" class="headerlink" title="一、直接遍历"></a>一、直接遍历</h2><h5 id="直接遍历两边-第一次遍历找x-第二次遍历找target-x-然后输出结果-复杂度-O-n-2"><a href="#直接遍历两边-第一次遍历找x-第二次遍历找target-x-然后输出结果-复杂度-O-n-2" class="headerlink" title="直接遍历两边,第一次遍历找x,第二次遍历找target-x,然后输出结果.复杂度 O(n^2)"></a>直接遍历两边,第一次遍历找x,第二次遍历找target-x,然后输出结果.复杂度 O(n^2)</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">twoSum</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">nums<span class="token punctuation">,</span> target</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">// 直接 遍历两遍得出结果</span>
-  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-      <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+</span>nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">===</span>target<span class="token operator">&amp;&amp;</span>i<span class="token operator">!=</span>j<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token punctuation">[</span>i<span class="token punctuation">,</span>j<span class="token punctuation">]</span>
+                <blockquote><p>深copy和浅copy都是对于引用数据类型的。<br>浅copy就只是复制对象的引用,如果copy后的对象发生变化,原对象也会发生变化,只有当深copy才是真正地对象的copy。</p>
+</blockquote>
+<h2 id="一、浅copy及常用的浅copy的一些方法"><a href="#一、浅copy及常用的浅copy的一些方法" class="headerlink" title="一、浅copy及常用的浅copy的一些方法"></a>一、浅copy及常用的浅copy的一些方法</h2><h5 id="给定一个引用数据类型A-当B复制了A后-B改变-A也会跟着改变"><a href="#给定一个引用数据类型A-当B复制了A后-B改变-A也会跟着改变" class="headerlink" title="给定一个引用数据类型A,当B复制了A后,B改变,A也会跟着改变"></a>给定一个引用数据类型A,当B复制了A后,B改变,A也会跟着改变</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> a<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> b<span class="token operator">=</span>a<span class="token punctuation">;</span> 
+b<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">5</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//[5,2,3]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//[5,2,3]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-1-Object-assign"><a href="#1-1-Object-assign" class="headerlink" title="1.1 Object.assign()"></a>1.1 Object.assign()</h3><h5 id="将源对象中所有的可枚举属性-复制到目标对象"><a href="#将源对象中所有的可枚举属性-复制到目标对象" class="headerlink" title="将源对象中所有的可枚举属性,复制到目标对象"></a>将源对象中所有的可枚举属性,复制到目标对象</h5><h5 id="Object-assign-target–目标对象-可以跟多个参数-且后者会覆盖前者"><a href="#Object-assign-target–目标对象-可以跟多个参数-且后者会覆盖前者" class="headerlink" title="Object.assign(target–目标对象,可以跟多个参数,且后者会覆盖前者)"></a>Object.assign(target–目标对象,可以跟多个参数,且后者会覆盖前者)</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> obj<span class="token operator">=</span><span class="token punctuation">&#123;</span>name<span class="token operator">:</span><span class="token string">'xiner'</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token punctuation">&#123;</span>a<span class="token operator">:</span><span class="token number">88888</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> obj2<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>obj2<span class="token punctuation">,</span>obj<span class="token punctuation">)</span>
+obj2<span class="token punctuation">.</span>age<span class="token punctuation">.</span>a<span class="token operator">=</span><span class="token number">7777</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>  <span class="token comment">//&#123;name: "xiner", age: &#123;a:7777&#125;&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj2<span class="token punctuation">)</span> <span class="token comment">//&#123;name: "xiner", age: &#123;a:7777&#125;&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote><p>只能copy原对象的自身属性和symbol值的属性<br>不能copy原对象不可枚举的属性和继承的属性,也不能copy null和undefined</p>
+</blockquote>
+<h3 id="1-2-扩展运算符"><a href="#1-2-扩展运算符" class="headerlink" title="1.2 扩展运算符"></a>1.2 扩展运算符</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> obj<span class="token operator">=</span><span class="token punctuation">&#123;</span>name<span class="token operator">:</span><span class="token string">'xiner'</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token punctuation">&#123;</span>a<span class="token operator">:</span><span class="token number">88888</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> obj2<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token operator">...</span>obj<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+obj2<span class="token punctuation">.</span>age<span class="token punctuation">.</span>c<span class="token operator">=</span><span class="token number">7777</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>  <span class="token comment">//&#123;name: "xiner", age: &#123;c:7777&#125;&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj2<span class="token punctuation">)</span> <span class="token comment">//&#123;name: "xiner", age: &#123;c:7777&#125;&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-3-数组的方法-slice-concat"><a href="#1-3-数组的方法-slice-concat" class="headerlink" title="1.3 数组的方法 slice concat"></a>1.3 数组的方法 slice concat</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// slice</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token keyword">let</span> arr2<span class="token operator">=</span>arr<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+arr2<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">8</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token comment">//[1,2,3,4,5,[8,8,9]]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span> <span class="token comment">//[1,2,3,4,5,[8,8,9]]</span>
+<span class="token comment">// concat</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token keyword">let</span> arr2<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr2<span class="token operator">=</span>arr2<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+arr2<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">8</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token comment">//[1,2,3,4,5,[8,8,9]]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span> <span class="token comment">//[1,2,3,4,5,[8,8,9]]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结:"></a>总结:</h5><blockquote><p>1.赋值运算符 = 实现的是浅拷贝，只拷贝对象的引用值；<br>2.数组和对象自带的拷贝方法都是“首层浅拷贝”</p>
+</blockquote>
+<h2 id="二、深copy及深copy的一些方法"><a href="#二、深copy及深copy的一些方法" class="headerlink" title="二、深copy及深copy的一些方法"></a>二、深copy及深copy的一些方法</h2><h5 id="深copy后-两者没有任何关系"><a href="#深copy后-两者没有任何关系" class="headerlink" title="深copy后,两者没有任何关系"></a>深copy后,两者没有任何关系</h5><h3 id="2-1-JSON-parse-和-JSON-stringify"><a href="#2-1-JSON-parse-和-JSON-stringify" class="headerlink" title="2.1 JSON.parse 和 JSON.stringify"></a>2.1 JSON.parse 和 JSON.stringify</h3><h5 id="JSON-parse-把字符串转化为一个js对象"><a href="#JSON-parse-把字符串转化为一个js对象" class="headerlink" title="JSON,parse 把字符串转化为一个js对象"></a>JSON,parse 把字符串转化为一个js对象</h5><h5 id="JSON-stringify-把对象转换为一个字符串"><a href="#JSON-stringify-把对象转换为一个字符串" class="headerlink" title="JSON.stringify 把对象转换为一个字符串"></a>JSON.stringify 把对象转换为一个字符串</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> obj<span class="token operator">=</span><span class="token punctuation">&#123;</span>name<span class="token operator">:</span><span class="token string">'xiner'</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token punctuation">&#123;</span>a<span class="token operator">:</span><span class="token number">88888</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token function-variable function">get</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">return</span> <span class="token number">2</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> obj2<span class="token operator">=</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span>
+obj2<span class="token punctuation">.</span>age<span class="token punctuation">.</span>a<span class="token operator">=</span><span class="token number">9999</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>  <span class="token comment">//&#123;name: "xiner", age: &#123;a:88888&#125;&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj2<span class="token punctuation">)</span> <span class="token comment">//&#123;name: "xiner", age: &#123;a:9999&#125;&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="缺点-不能处理包含函数的对象和数组"><a href="#缺点-不能处理包含函数的对象和数组" class="headerlink" title="缺点: 不能处理包含函数的对象和数组"></a>缺点: 不能处理包含函数的对象和数组</h5><h3 id="2-2-使用递归实现深copy"><a href="#2-2-使用递归实现深copy" class="headerlink" title="2.2 使用递归实现深copy"></a>2.2 使用递归实现深copy</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">deepClone</span><span class="token punctuation">(</span><span class="token parameter">source</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> resObj<span class="token operator">=</span>source<span class="token punctuation">.</span>constructor<span class="token operator">===</span>Array<span class="token operator">?</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">:</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>  <span class="token comment">//判断赋值的是数组还是对象</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> key <span class="token keyword">in</span> source<span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">//遍历</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>source<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token comment">// 自己本身有的，不是继承来的</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>source<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> source<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">"object"</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">//判断属性值是否是引用数据类型</span>
+        resObj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token operator">=</span>source<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">.</span>constructor<span class="token operator">===</span>Array<span class="token operator">?</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">:</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>  <span class="token comment">//判断属性值是数组还是对象</span>
+        resObj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">deepClone</span><span class="token punctuation">(</span>source<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">//递归</span>
+      <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+        resObj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token operator">=</span>source<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token comment">//直接赋值</span>
       <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
   <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二、obj"><a href="#二、obj" class="headerlink" title="二、obj"></a>二、obj</h2><h5 id="遍历一遍-使用对象作为中间件-把target-x保存下来-复杂度-O-n"><a href="#遍历一遍-使用对象作为中间件-把target-x保存下来-复杂度-O-n" class="headerlink" title="遍历一遍,使用对象作为中间件,把target-x保存下来.复杂度 O(n)"></a>遍历一遍,使用对象作为中间件,把target-x保存下来.复杂度 O(n)</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">twoSum</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">nums<span class="token punctuation">,</span> target</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">let</span> obj<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">const</span> num<span class="token operator">=</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>num <span class="token keyword">in</span> obj<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-      <span class="token keyword">return</span> <span class="token punctuation">[</span>obj<span class="token punctuation">[</span>num<span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token punctuation">]</span>
-    <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
-      obj<span class="token punctuation">[</span>target<span class="token operator">-</span>num<span class="token punctuation">]</span><span class="token operator">=</span>i
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="三、map"><a href="#三、map" class="headerlink" title="三、map"></a>三、map</h2><h5 id="遍历一遍-使用map作为中间件-把target-x保存下来-复杂度-O-n"><a href="#遍历一遍-使用map作为中间件-把target-x保存下来-复杂度-O-n" class="headerlink" title="遍历一遍,使用map作为中间件,把target-x保存下来.复杂度 O(n)"></a>遍历一遍,使用map作为中间件,把target-x保存下来.复杂度 O(n)</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">twoSum</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">nums<span class="token punctuation">,</span> target</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">let</span> map<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-      <span class="token keyword">return</span> <span class="token punctuation">[</span>map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>i<span class="token punctuation">]</span>
-    <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
-     map<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>target<span class="token operator">-</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  <span class="token keyword">return</span> resObj <span class="token comment">//返回值</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -492,7 +515,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xiner08.github.io/posts/d10e.html">http://xiner08.github.io/posts/d10e.html</a>
+                    <a href="http://xiner08.github.io/posts/159a.html">http://xiner08.github.io/posts/159a.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -530,8 +553,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/leetcode/">
-                                    <span class="chip bg-color">leetcode</span>
+                                <a href="/tags/js/">
+                                    <span class="chip bg-color">js</span>
                                 </a>
                             
                         </div>
@@ -579,13 +602,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/9923.html">
+                <a href="/posts/d10e.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="leetcode第7题:整数反转">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="leetcode第1题:两数之和">
                         
-                        <span class="card-title">leetcode第7题:整数反转</span>
+                        <span class="card-title">leetcode第1题:两数之和</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -596,7 +619,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-21
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-20
                         </span>
                         <span class="publish-author">
                             
@@ -628,13 +651,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/159a.html">
+                <a href="/posts/ffd3.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="js深浅copy">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="js继承">
                         
-                        <span class="card-title">js深浅copy</span>
+                        <span class="card-title">js继承</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -645,7 +668,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-19
                             </span>
                         <span class="publish-author">
                             
