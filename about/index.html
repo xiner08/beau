@@ -325,21 +325,21 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">10</a></span>
+    <span class="count"><a href="/">13</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">3</a></span>
+    <span class="count"><a href="/categories">5</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">3</a></span>
+    <span class="count"><a href="/tags">5</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -355,21 +355,21 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">10</a></span>
+    <span class="count"><a href="/">13</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">3</a></span>
+    <span class="count"><a href="/categories">5</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">3</a></span>
+    <span class="count"><a href="/tags">5</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -495,7 +495,7 @@
         },
         xAxis: {
             type: 'category',
-            data: ["2020-01","2020-02","2020-03","2020-04","2020-05","2020-06","2020-07","2020-08","2020-09","2020-10","2020-11","2020-12","2021-01"]
+            data: ["2020-03","2020-04","2020-05","2020-06","2020-07","2020-08","2020-09","2020-10","2020-11","2020-12","2021-01","2021-02","2021-03"]
         },
         yAxis: {
             type: 'value',
@@ -505,7 +505,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [4,0,0,0,3,1,0,0,0,0,0,0,0],
+                data: [0,0,3,2,0,1,0,1,0,0,0,0,0],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -547,7 +547,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"js","value":6},{"name":"leetcode","value":3},{"name":"vue","value":1}],
+                data: [{"name":"leetcode","value":5},{"name":"算法","value":5},{"name":"js","value":6},{"name":"vue","value":1},{"name":"js工具","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -571,7 +571,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["js","leetcode","vue"]
+                data: ["js","leetcode","算法","vue","js工具"]
             }
         ],
         yAxis: [
@@ -584,7 +584,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [6,3,1],
+                data: [6,5,5,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -702,17 +702,29 @@
         <div class="tag-chips center-align">
             
             
+            <a href="/tags/leetcode/">
+                <span class="chip center-align waves-effect waves-light chip-default">leetcode</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                <span class="chip center-align waves-effect waves-light chip-default">算法</span>
+            </a>
+            
+            
+            
             <a href="/tags/js/">
                 <span class="chip center-align waves-effect waves-light chip-default">js</span>
             </a>
             
             
             
-            <a href="/tags/leetcode/">
-                <span class="chip center-align waves-effect waves-light chip-default">leetcode</span>
+            
+            
+            <a href="/tags/js%E5%B7%A5%E5%85%B7/">
+                <span class="chip center-align waves-effect waves-light chip-default">js工具</span>
             </a>
-            
-            
             
             
         </div>

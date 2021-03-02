@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="简单实现vue源码, HTML,CSS,JavaScript,VUE,REACT,node,webpack等">
+    <meta name="keywords" content="webpack, HTML,CSS,JavaScript,VUE,REACT,node,webpack等">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>简单实现vue源码 | Hearter</title>
+    <title>webpack | Hearter</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">简单实现vue源码</h1>
+                    <h1 class="description center-align post-title">webpack</h1>
                 </div>
             </div>
         </div>
@@ -387,8 +387,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/vue/">
-                                <span class="chip bg-color">vue</span>
+                            <a href="/tags/js%E5%B7%A5%E5%85%B7/">
+                                <span class="chip bg-color">js工具</span>
                             </a>
                         
                     </div>
@@ -399,8 +399,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/vue/" class="post-category">
-                                vue
+                            <a href="/categories/js%E5%B7%A5%E5%85%B7/" class="post-category">
+                                js工具
                             </a>
                         
                     </div>
@@ -412,7 +412,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-12
+                    2020-10-12
                 </div>
                 
 
@@ -436,11 +436,31 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="vue是一个mvvm框架"><a href="#vue是一个mvvm框架" class="headerlink" title="vue是一个mvvm框架"></a>vue是一个mvvm框架</h5><h5 id="mvvm框架实现的三要素是-数据响应式、模板引擎及其引擎"><a href="#mvvm框架实现的三要素是-数据响应式、模板引擎及其引擎" class="headerlink" title="mvvm框架实现的三要素是: 数据响应式、模板引擎及其引擎"></a>mvvm框架实现的三要素是: 数据响应式、模板引擎及其引擎</h5><h5 id="数据响应式-监听数据变化并在视图中更新"><a href="#数据响应式-监听数据变化并在视图中更新" class="headerlink" title="数据响应式: 监听数据变化并在视图中更新"></a>数据响应式: 监听数据变化并在视图中更新</h5><p> · Object.defineProperty() <br>  · Proxy </p>
-<h5 id="模板引擎-提供描述试图的模板语法"><a href="#模板引擎-提供描述试图的模板语法" class="headerlink" title="模板引擎: 提供描述试图的模板语法"></a>模板引擎: 提供描述试图的模板语法</h5><p> · 插值<br> · 指令
-   </p>
-<h5 id="渲染-将模板转换为html"><a href="#渲染-将模板转换为html" class="headerlink" title="渲染: 将模板转换为html"></a>渲染: 将模板转换为html</h5><hr>
-
+                <h5 id="webpack是一个javaScript应用程序的静态打包工具"><a href="#webpack是一个javaScript应用程序的静态打包工具" class="headerlink" title="webpack是一个javaScript应用程序的静态打包工具."></a>webpack是一个javaScript应用程序的静态打包工具.</h5><h3 id="一、基础的一些配置"><a href="#一、基础的一些配置" class="headerlink" title="一、基础的一些配置"></a>一、基础的一些配置</h3><h4 id="1-entry-入口文件"><a href="#1-entry-入口文件" class="headerlink" title="1. entry 入口文件"></a>1. entry 入口文件</h4><h5 id="1-1-字符串"><a href="#1-1-字符串" class="headerlink" title="1.1 字符串"></a>1.1 字符串</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js">entry<span class="token operator">:</span><span class="token string">"./src/index.js"</span><span class="token punctuation">,</span>  <span class="token comment">// 一个入口,一个出口,相对路径</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="1-2-数组"><a href="#1-2-数组" class="headerlink" title="1.2 数组"></a>1.2 数组</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js">entry<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"./src/index.js"</span><span class="token punctuation">,</span><span class="token string">"./src/other.js"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 数组,多个入口,一个出口,相当于将 两个入口文件拼接在一起</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="1-3-对象-多入口-多出口"><a href="#1-3-对象-多入口-多出口" class="headerlink" title="1.3 对象 多入口,多出口"></a>1.3 对象 多入口,多出口</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js">entry<span class="token operator">:</span><span class="token punctuation">&#123;</span>index<span class="token operator">:</span><span class="token string">'./src/index.js'</span><span class="token punctuation">,</span>other<span class="token operator">:</span><span class="token string">'./src/other.js'</span><span class="token punctuation">&#125;</span> <span class="token comment">//两个入口文件,则会出现两个出口文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="2-mode-指定当前的环境"><a href="#2-mode-指定当前的环境" class="headerlink" title="2. mode 指定当前的环境"></a>2. mode 指定当前的环境</h4><h5 id="默认值是-production-生产环境-也是线上环境-打包后代码会被压缩-当值改为development时-则为开发环境-打包后代码不会被压缩-当值改为none时-不适用任何默认优化选项"><a href="#默认值是-production-生产环境-也是线上环境-打包后代码会被压缩-当值改为development时-则为开发环境-打包后代码不会被压缩-当值改为none时-不适用任何默认优化选项" class="headerlink" title="默认值是 production,生产环境,也是线上环境,打包后代码会被压缩,当值改为development时,则为开发环境,打包后代码不会被压缩; 当值改为none时,不适用任何默认优化选项"></a>默认值是 production,生产环境,也是线上环境,打包后代码会被压缩,当值改为development时,则为开发环境,打包后代码不会被压缩; 当值改为none时,不适用任何默认优化选项</h5><h4 id="3-output-输出"><a href="#3-output-输出" class="headerlink" title="3.output 输出"></a>3.output 输出</h4><h5 id="3-1-path-目录对应一个绝对路径"><a href="#3-1-path-目录对应一个绝对路径" class="headerlink" title="3.1 path 目录对应一个绝对路径"></a>3.1 path 目录对应一个绝对路径</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// process.cwd() 是当前Node.js进程执行时的文件夹目录——工作目录，保证了文件在不同的目录下执行时，路径始终不变</span>
+  <span class="token comment">// __dirname 是被执行的js文件的所在的文件夹目录 ——文件所在目录</span>
+  path<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span><span class="token string">'./dist'</span><span class="token punctuation">)</span>  <span class="token comment">//在当前js目录下创建dist文件夹</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-2-filename-输出文件"><a href="#3-2-filename-输出文件" class="headerlink" title="3.2 filename 输出文件"></a>3.2 filename 输出文件</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js">filename<span class="token operator">:</span><span class="token string">'main.js'</span>   <span class="token comment">//输出的文件是main.js,只能是一个</span>
+filename<span class="token operator">:</span><span class="token string">'[name].js'</span>   <span class="token comment">//输出的文件是打包的代码块的名称,可以是多个</span>
+filename<span class="token operator">:</span><span class="token string">'[name]-[hash:6].js'</span>   <span class="token comment">//输出的文件是打包的代码块的名称加上一段长度为6的哈希,每次打包都会生成一个新的,可以是多个</span>
+filename<span class="token operator">:</span><span class="token string">'[name]-[chunkhash:6].js'</span>   <span class="token comment">//输出的文件是打包的代码块的名称加上一段长度为6的哈希,适用于多个出口,每一次打包只改变 修改过的文件,没有修改过的不变,可以是多个</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-context-基础目录-绝对路径"><a href="#4-context-基础目录-绝对路径" class="headerlink" title="4. context 基础目录,绝对路径"></a>4. context 基础目录,绝对路径</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js">context<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'app'</span><span class="token punctuation">)</span><span class="token comment">// 用于从配置中解析人口点和加载器</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="5-module-模块"><a href="#5-module-模块" class="headerlink" title="5. module 模块"></a>5. module 模块</h4><h5 id="webpack-默认只支持js和json-module的出现使webpack可以将一些其他的模块转化成可识别的模块"><a href="#webpack-默认只支持js和json-module的出现使webpack可以将一些其他的模块转化成可识别的模块" class="headerlink" title="webpack  默认只支持js和json,module的出现使webpack可以将一些其他的模块转化成可识别的模块"></a>webpack  默认只支持js和json,module的出现使webpack可以将一些其他的模块转化成可识别的模块</h5><h5 id="5-1-识别css-loader"><a href="#5-1-识别css-loader" class="headerlink" title="5.1 识别css-loader"></a>5.1 识别css-loader</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">&#123;</span>
+rules<span class="token operator">:</span><span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span>
+        test<span class="token operator">:</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.css$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> 
+        <span class="token comment">//执行顺序 从后往前</span>
+        <span class="token comment">//css-loader 把css模块的代码放入到js中</span>
+        <span class="token comment">//style-loader 提取js中css的代码，然后在html创建 style标签,把css代码放入style中</span>
+        use<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">'style-loader'</span><span class="token punctuation">,</span> <span class="token string">'css-loader'</span><span class="token punctuation">]</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="6-plugins-插件"><a href="#6-plugins-插件" class="headerlink" title="6.plugins 插件"></a>6.plugins 插件</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">&#123;</span>CleanWebpackPlugin<span class="token punctuation">&#125;</span><span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'clean-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//插件</span>
+plugins<span class="token operator">:</span><span class="token punctuation">[</span><span class="token keyword">new</span> <span class="token class-name">CleanWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -466,7 +486,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xiner08.github.io/posts/e9c3.html">http://xiner08.github.io/posts/e9c3.html</a>
+                    <a href="http://xiner08.github.io/posts/3bd5.html">http://xiner08.github.io/posts/3bd5.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -504,8 +524,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/vue/">
-                                    <span class="chip bg-color">vue</span>
+                                <a href="/tags/js%E5%B7%A5%E5%85%B7/">
+                                    <span class="chip bg-color">js工具</span>
                                 </a>
                             
                         </div>
@@ -549,17 +569,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/9923.html">
+                <a href="/posts/3bd5.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="leetcode第7题:整数反转">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="webpack">
                         
-                        <span class="card-title">leetcode第7题:整数反转</span>
+                        <span class="card-title">webpack</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -569,34 +590,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/leetcode/" class="post-category">
-                                    leetcode
-                                </a>
-                            
-                            <a href="/categories/leetcode/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/categories/js%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    js工具
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leetcode/">
-                        <span class="chip bg-color">leetcode</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/js%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">js工具</span>
                     </a>
                     
                 </div>
@@ -610,13 +624,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/11a9.html">
+                <a href="/posts/7ddc.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="leetcode第3题:无重复字符的最长子串">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="leetcode第912题:数组排序">
                         
-                        <span class="card-title">leetcode第3题:无重复字符的最长子串</span>
+                        <span class="card-title">leetcode第912题:数组排序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -627,7 +641,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-02
                             </span>
                         <span class="publish-author">
                             
