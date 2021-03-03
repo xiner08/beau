@@ -447,8 +447,8 @@ filename<span class="token operator">:</span><span class="token string">'[name].
 filename<span class="token operator">:</span><span class="token string">'[name]-[hash:6].js'</span>   <span class="token comment">//输出的文件是打包的代码块的名称加上一段长度为6的哈希,每次打包都会生成一个新的,可以是多个</span>
 filename<span class="token operator">:</span><span class="token string">'[name]-[chunkhash:6].js'</span>   <span class="token comment">//输出的文件是打包的代码块的名称加上一段长度为6的哈希,适用于多个出口,每一次打包只改变 修改过的文件,没有修改过的不变,可以是多个</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="4-context-基础目录-绝对路径"><a href="#4-context-基础目录-绝对路径" class="headerlink" title="4. context 基础目录,绝对路径"></a>4. context 基础目录,绝对路径</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js">context<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'app'</span><span class="token punctuation">)</span><span class="token comment">// 用于从配置中解析人口点和加载器</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="5-module-模块"><a href="#5-module-模块" class="headerlink" title="5. module 模块"></a>5. module 模块</h4><h5 id="webpack-默认只支持js和json-module的出现使webpack可以将一些其他的模块转化成可识别的模块"><a href="#webpack-默认只支持js和json-module的出现使webpack可以将一些其他的模块转化成可识别的模块" class="headerlink" title="webpack  默认只支持js和json,module的出现使webpack可以将一些其他的模块转化成可识别的模块"></a>webpack  默认只支持js和json,module的出现使webpack可以将一些其他的模块转化成可识别的模块</h5><h5 id="5-1-识别css-loader"><a href="#5-1-识别css-loader" class="headerlink" title="5.1 识别css-loader"></a>5.1 识别css-loader</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">&#123;</span>
-rules<span class="token operator">:</span><span class="token punctuation">[</span>
+<h4 id="5-module-模块-loader一个loader-只处理一个loader"><a href="#5-module-模块-loader一个loader-只处理一个loader" class="headerlink" title="5. module 模块 loader一个loader 只处理一个loader"></a>5. module 模块 loader一个loader 只处理一个loader</h4><h5 id="webpack-默认只支持js和json-module的出现使webpack可以将一些其他的模块转化成可识别的模块"><a href="#webpack-默认只支持js和json-module的出现使webpack可以将一些其他的模块转化成可识别的模块" class="headerlink" title="webpack  默认只支持js和json,module的出现使webpack可以将一些其他的模块转化成可识别的模块"></a>webpack  默认只支持js和json,module的出现使webpack可以将一些其他的模块转化成可识别的模块</h5><h5 id="5-1-识别css-loader"><a href="#5-1-识别css-loader" class="headerlink" title="5.1 识别css-loader"></a>5.1 识别css-loader</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">&#123;</span>
+  rules<span class="token operator">:</span><span class="token punctuation">[</span>
       <span class="token punctuation">&#123;</span>
         test<span class="token operator">:</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.css$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> 
         <span class="token comment">//执行顺序 从后往前</span>
@@ -458,9 +458,113 @@ rules<span class="token operator">:</span><span class="token punctuation">[</spa
       <span class="token punctuation">&#125;</span>
     <span class="token punctuation">]</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="6-plugins-插件"><a href="#6-plugins-插件" class="headerlink" title="6.plugins 插件"></a>6.plugins 插件</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">&#123;</span>CleanWebpackPlugin<span class="token punctuation">&#125;</span><span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'clean-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h5 id="5-2-使用css-loader-的模块-css-modules"><a href="#5-2-使用css-loader-的模块-css-modules" class="headerlink" title="5.2  使用css-loader 的模块 css-modules"></a>5.2  使用css-loader 的模块 css-modules</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+  rules<span class="token operator">:</span><span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span>test<span class="token operator">:</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.less$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> use<span class="token operator">:</span><span class="token punctuation">[</span>
+      <span class="token string">'style-loader'</span><span class="token punctuation">,</span> 
+      <span class="token punctuation">&#123;</span>
+        loader<span class="token operator">:</span><span class="token string">'css-loader'</span><span class="token punctuation">,</span>
+        options<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+          <span class="token comment">//开启css-modules模式  默认是不开启的,可以使用css的类名 来设置样式</span>
+          modules<span class="token operator">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token string">'less-loader'</span>  <span class="token comment">//预处理器</span>
+    <span class="token punctuation">]</span><span class="token punctuation">&#125;</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="5-3-使用postcss-loader-后处理器-增加一些前缀-做一些浏览器的兼容-autoprefixer-做一些兼容"><a href="#5-3-使用postcss-loader-后处理器-增加一些前缀-做一些浏览器的兼容-autoprefixer-做一些兼容" class="headerlink" title="5.3  使用postcss-loader 后处理器,增加一些前缀,做一些浏览器的兼容 autoprefixer 做一些兼容"></a>5.3  使用postcss-loader 后处理器,增加一些前缀,做一些浏览器的兼容 autoprefixer 做一些兼容</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">// loader</span>
+    rules<span class="token operator">:</span><span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span>test<span class="token operator">:</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.css$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> use<span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token string">'style-loader'</span><span class="token punctuation">,</span> 
+        <span class="token punctuation">&#123;</span>
+          loader<span class="token operator">:</span><span class="token string">'css-loader'</span><span class="token punctuation">,</span>
+          options<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">//开启css-loader  默认是不开启的 </span>
+            modules<span class="token operator">:</span> <span class="token boolean">true</span>
+          <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#123;</span>
+          <span class="token comment">//必须在css-loader之前使用</span>
+          loader<span class="token operator">:</span><span class="token string">'postcss-loader'</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">]</span><span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token comment">//新建一个 postcss.config.js 配置文件,并自动加载 解析</span>
+<span class="token keyword">const</span> autoprefixer<span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'autoprefixer'</span><span class="token punctuation">)</span>
+module<span class="token punctuation">.</span>exports<span class="token operator">=</span><span class="token punctuation">&#123;</span>
+  plugins<span class="token operator">:</span><span class="token punctuation">[</span>
+    <span class="token comment">//postcss 使用autoprefixer 添加前缀的标准 做一些兼容</span>
+    <span class="token comment">// autoprefixer("IE 10")</span>
+    <span class="token comment">//  last 2 versions  最近的两个版本</span>
+    <span class="token comment">//  >1%  全球浏览器份额大于1%</span>
+    <span class="token function">autoprefixer</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> 
+      overrideBrowserslist<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"last 2 versions"</span><span class="token punctuation">,</span><span class="token string">">1%"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="5-4-使用file-loader-对图片、文件做一些处理"><a href="#5-4-使用file-loader-对图片、文件做一些处理" class="headerlink" title="5.4  使用file-loader 对图片、文件做一些处理"></a>5.4  使用file-loader 对图片、文件做一些处理</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js">modules<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+  rules<span class="token operator">:</span><span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+      test<span class="token operator">:</span><span class="token string">'/\.(png|jpe?g|gif)$/'</span><span class="token punctuation">,</span>
+      loader<span class="token operator">:</span><span class="token string">'file-loader'</span><span class="token punctuation">,</span>
+      options<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">//将 图片提取到同一个目录下</span>
+        outputPath<span class="token operator">:</span><span class="token string">'image/'</span><span class="token punctuation">,</span>
+        <span class="token comment">//ext 采用之前的后缀</span>
+        name<span class="token operator">:</span><span class="token string">'[name]-[hash:6].[ext]'</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="5-5-使用url-loader-对图片、文件做一些处理-包含了file-loader，更强大"><a href="#5-5-使用url-loader-对图片、文件做一些处理-包含了file-loader，更强大" class="headerlink" title="5.5  使用url-loader 对图片、文件做一些处理,包含了file-loader，更强大"></a>5.5  使用url-loader 对图片、文件做一些处理,包含了file-loader，更强大</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js">modules<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+  rules<span class="token operator">:</span><span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+      loader<span class="token operator">:</span> <span class="token string">'url-loader'</span><span class="token punctuation">,</span>
+      options<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">//ext 后缀名</span>
+        name<span class="token operator">:</span> <span class="token string">'[name]_[hash:6].[ext]'</span><span class="token punctuation">,</span> 
+        <span class="token comment">//输出文件 加一个目录 提取图片在一个目录下 </span>
+        outputPath<span class="token operator">:</span><span class="token string">'images/'</span><span class="token punctuation">,</span>
+        <span class="token comment">//推荐使用 url-loader,因为url-loader支持limit,将一些</span>
+        <span class="token comment">//小的文件可以将其转化为base64格式 提高加载速度 10kb以下,</span>
+        <span class="token comment">// 体积越大，增加js体积</span>
+        limit<span class="token operator">:</span> <span class="token number">10</span><span class="token operator">*</span><span class="token number">1024</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="6-plugins-插件"><a href="#6-plugins-插件" class="headerlink" title="6.plugins 插件"></a>6.plugins 插件</h4><h5 id="6-1-CleanWebpackPlugin-每一次打包都清空打包目录"><a href="#6-1-CleanWebpackPlugin-每一次打包都清空打包目录" class="headerlink" title="6.1  CleanWebpackPlugin 每一次打包都清空打包目录"></a>6.1  CleanWebpackPlugin 每一次打包都清空打包目录</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">&#123;</span>CleanWebpackPlugin<span class="token punctuation">&#125;</span><span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'clean-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//插件</span>
 plugins<span class="token operator">:</span><span class="token punctuation">[</span><span class="token keyword">new</span> <span class="token class-name">CleanWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h5 id="6-2-html-webpack-plugin-对html文件进行转换"><a href="#6-2-html-webpack-plugin-对html文件进行转换" class="headerlink" title="6.2  html-webpack-plugin 对html文件进行转换"></a>6.2  html-webpack-plugin 对html文件进行转换</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> HtmlWebpackPlugin<span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'html-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// plugins:[new CleanWebpackPlugin()]</span>
+plugins<span class="token operator">:</span><span class="token punctuation">[</span><span class="token keyword">new</span> <span class="token class-name">HtmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  <span class="token comment">//选择html模板</span>
+  template<span class="token operator">:</span><span class="token string">"./src/index.html"</span><span class="token punctuation">,</span>
+  <span class="token comment">//生成的文件</span>
+  filename<span class="token operator">:</span><span class="token string">"index.html"</span><span class="token punctuation">,</span>
+  <span class="token comment">//支持的是ejs模板</span>
+  title<span class="token operator">:</span><span class="token string">"心儿"</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token comment">// 在index.html 中拿到title</span>
+  <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 默认支持ejs模板语法 <span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>title<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">%=</span> htmlWebpackPlugin<span class="token punctuation">.</span>options<span class="token punctuation">.</span>title <span class="token operator">%</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="7-devtool-sourceMap打包后的代码和源代码之间的关系-开发环境可以拿到代码报错的地方"><a href="#7-devtool-sourceMap打包后的代码和源代码之间的关系-开发环境可以拿到代码报错的地方" class="headerlink" title="7.devtool     sourceMap打包后的代码和源代码之间的关系,开发环境可以拿到代码报错的地方"></a>7.devtool     sourceMap打包后的代码和源代码之间的关系,开发环境可以拿到代码报错的地方</h4><h5 id="development-开发环境-默认开启"><a href="#development-开发环境-默认开启" class="headerlink" title="development 开发环境 默认开启"></a>development 开发环境 默认开启</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 版本 webpack5 不支持了, 还是不要开启保护代码 打包到生产环境时,不要开启 </span>
+devtool<span class="token operator">:</span><span class="token string">'none'</span>
+<span class="token comment">//一定要设置时,设置为 cheap-module-source-map这样也很慢,而且会生成一个map文件</span>
+devtool<span class="token operator">:</span> <span class="token string">'cheap-module-source-map'</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="8-devserver-本地开发服务-实现了代码保存一下，页面更新一下"><a href="#8-devserver-本地开发服务-实现了代码保存一下，页面更新一下" class="headerlink" title="8.devserver  本地开发服务,实现了代码保存一下，页面更新一下"></a>8.devserver  本地开发服务,实现了代码保存一下，页面更新一下</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"> <span class="token comment">// 下载 安装 webpack-dev-server</span>
+<span class="token comment">//  当遇到 Cannot find module 'webpack-cli/bin/config-yargs',更改 webpack-cli的版本到 3 则可以了</span>
+ devServer<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+   contentBase<span class="token operator">:</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span><span class="token string">'./dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">//绝对路径 会更快一点</span>
+   open<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">//</span>
+   port<span class="token operator">:</span> <span class="token number">3030</span>  <span class="token comment">//端口号 </span>
+ <span class="token punctuation">&#125;</span>
+ <span class="token comment">// 在package.json的 scripts 中写 </span>
+   <span class="token string">"dev"</span><span class="token operator">:</span> <span class="token string">"webpack-dev-server"</span>
+ <span class="token comment">// 则可以使用  npm run dev 来进行打包,但是 dist目录下并没有文件,而是因为打包后的 文件放到了内存中,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
