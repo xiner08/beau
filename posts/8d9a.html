@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="leetcode第3题:无重复字符的最长子串, HTML,CSS,JavaScript,VUE,REACT,node,webpack等">
+    <meta name="keywords" content="leetcode第5题:最长回文子串, HTML,CSS,JavaScript,VUE,REACT,node,webpack等">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>leetcode第3题:无重复字符的最长子串 | Hearter</title>
+    <title>leetcode第5题:最长回文子串 | Hearter</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">leetcode第3题:无重复字符的最长子串</h1>
+                    <h1 class="description center-align post-title">leetcode第5题:最长回文子串</h1>
                 </div>
             </div>
         </div>
@@ -420,7 +420,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-26
+                    2020-05-28
                 </div>
                 
 
@@ -444,25 +444,28 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="给定一个字符串，请你找出其中不含有重复字符的最长子串的长度。"><a href="#给定一个字符串，请你找出其中不含有重复字符的最长子串的长度。" class="headerlink" title="给定一个字符串，请你找出其中不含有重复字符的最长子串的长度。"></a>给定一个字符串，请你找出其中不含有重复字符的最长子串的长度。</h5><h6 id="使用滑动窗口-给定一个空数组-遍历当前字符串-检查当前值是否在数组中-若不在-将其push到数组中-若在，将当前值所在位置之前并包括其本身都从数组中删除-然后再将其push到数组中-每次push到数组中时，都取max和当前数组长度的最大值赋值给max，最后将max返回-得到最大的长度"><a href="#使用滑动窗口-给定一个空数组-遍历当前字符串-检查当前值是否在数组中-若不在-将其push到数组中-若在，将当前值所在位置之前并包括其本身都从数组中删除-然后再将其push到数组中-每次push到数组中时，都取max和当前数组长度的最大值赋值给max，最后将max返回-得到最大的长度" class="headerlink" title="使用滑动窗口,给定一个空数组,遍历当前字符串,检查当前值是否在数组中,若不在,将其push到数组中,若在，将当前值所在位置之前并包括其本身都从数组中删除,然后再将其push到数组中, 每次push到数组中时，都取max和当前数组长度的最大值赋值给max，最后将max返回 得到最大的长度"></a>使用滑动窗口,给定一个空数组,遍历当前字符串,检查当前值是否在数组中,若不在,将其push到数组中,若在，将当前值所在位置之前并包括其本身都从数组中删除,然后再将其push到数组中, 每次push到数组中时，都取max和当前数组长度的最大值赋值给max，最后将max返回 得到最大的长度</h6><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
+                <h5 id="给你一个字符串s-找到-s-中最长的回文子串。-s的最大长度为1000"><a href="#给你一个字符串s-找到-s-中最长的回文子串。-s的最大长度为1000" class="headerlink" title="给你一个字符串s,找到 s 中最长的回文子串。 s的最大长度为1000"></a>给你一个字符串s,找到 s 中最长的回文子串。 s的最大长度为1000</h5><h5 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h5><h5 id="当遇到反复出现的子问题时-子问题还会包含更小的子问题-然后我们需要解决更小的问题，然后把问题的结果记录出来，最后通过子问题得到原问题的解-该题主要是要用到-if-s-i-s-j-amp-amp-dp-i-1-j-1-dp-i-j-true-回文子串的子集也是回文子串-dp-记录每一次遍历的结果"><a href="#当遇到反复出现的子问题时-子问题还会包含更小的子问题-然后我们需要解决更小的问题，然后把问题的结果记录出来，最后通过子问题得到原问题的解-该题主要是要用到-if-s-i-s-j-amp-amp-dp-i-1-j-1-dp-i-j-true-回文子串的子集也是回文子串-dp-记录每一次遍历的结果" class="headerlink" title="当遇到反复出现的子问题时,子问题还会包含更小的子问题,然后我们需要解决更小的问题，然后把问题的结果记录出来，最后通过子问题得到原问题的解. 该题主要是要用到  if(s[i]===s[j] &amp;&amp; dp[i+1][j-1]) dp[i][j]=true,回文子串的子集也是回文子串 dp 记录每一次遍历的结果"></a>当遇到反复出现的子问题时,子问题还会包含更小的子问题,然后我们需要解决更小的问题，然后把问题的结果记录出来，最后通过子问题得到原问题的解. 该题主要是要用到  if(s[i]===s[j] &amp;&amp; dp[i+1][j-1]) dp[i][j]=true,回文子串的子集也是回文子串 dp 记录每一次遍历的结果</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
  * @param &#123;string&#125; s
- * @return &#123;number&#125;
+ * @return &#123;string&#125;
  */</span>
-<span class="token keyword">var</span> <span class="token function-variable function">lengthOfLongestSubstring</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">s</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">let</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">let</span> max<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">let</span> i<span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>s<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">>=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            <span class="token comment">// 截取之前相同数字前的长度</span>
-            arr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>arr<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> <span class="token function-variable function">longestPalindrome</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">s</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>length<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> s
+    <span class="token keyword">let</span> res<span class="token operator">=</span>s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> dp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span>s<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">>=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> j<span class="token operator">=</span>i<span class="token punctuation">;</span>j<span class="token operator">&lt;</span>s<span class="token punctuation">.</span>length<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token comment">// dp[i][j]=true 当前是回文子串</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>j<span class="token operator">-</span>i<span class="token operator">===</span><span class="token number">0</span><span class="token punctuation">)</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span><span class="token boolean">true</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>j<span class="token operator">-</span>i<span class="token operator">==</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">===</span>s<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span><span class="token boolean">true</span>
+            <span class="token comment">// dp[i+1][j-i] 包含的子集也是回文子串</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">===</span>s<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> dp<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span><span class="token boolean">true</span>
+            <span class="token comment">// j-i+1>res.length 判断的是当前回文子串的长度是否是最大的</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> j<span class="token operator">-</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token operator">></span>res<span class="token punctuation">.</span>length<span class="token punctuation">)</span>  res<span class="token operator">=</span>s<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
         <span class="token punctuation">&#125;</span>
-        <span class="token comment">//charAt 返回当前索引所在字符串的值</span>
-        arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span>
-        <span class="token comment">//拿到 最大值</span>
-        max<span class="token operator">=</span>Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>max<span class="token punctuation">,</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
     <span class="token punctuation">&#125;</span>
-    <span class="token keyword">return</span> max
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">return</span> res 
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -488,7 +491,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xiner08.github.io/posts/11a9.html">http://xiner08.github.io/posts/11a9.html</a>
+                    <a href="http://xiner08.github.io/posts/8d9a.html">http://xiner08.github.io/posts/8d9a.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -579,13 +582,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/8d9a.html">
+                <a href="/posts/e9c3.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="leetcode第5题:最长回文子串">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="简单实现vue源码">
                         
-                        <span class="card-title">leetcode第5题:最长回文子串</span>
+                        <span class="card-title">简单实现vue源码</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -596,18 +599,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-28
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-12
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/leetcode/" class="post-category">
-                                    leetcode
-                                </a>
-                            
-                            <a href="/categories/leetcode/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/categories/vue/" class="post-category">
+                                    vue
                                 </a>
                             
                             
@@ -617,12 +616,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leetcode/">
-                        <span class="chip bg-color">leetcode</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
@@ -636,13 +631,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/44cd.html">
+                <a href="/posts/11a9.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="leetcode第2题:两数相加">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="leetcode第3题:无重复字符的最长子串">
                         
-                        <span class="card-title">leetcode第2题:两数相加</span>
+                        <span class="card-title">leetcode第3题:无重复字符的最长子串</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -653,7 +648,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-26
                             </span>
                         <span class="publish-author">
                             
