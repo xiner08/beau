@@ -535,6 +535,32 @@ module<span class="token punctuation">.</span>exports<span class="token operator
     <span class="token punctuation">&#125;</span>
   <span class="token punctuation">]</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="5-6-使用mini-css-extract-plugin-将css抽离出来"><a href="#5-6-使用mini-css-extract-plugin-将css抽离出来" class="headerlink" title="5.6 使用mini-css-extract-plugin 将css抽离出来"></a>5.6 使用mini-css-extract-plugin 将css抽离出来</h5><h5 id=""><a href="#" class="headerlink" title=""></a></h5><pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+   <span class="token comment">// loader</span>
+   rules<span class="token operator">:</span><span class="token punctuation">[</span>
+     <span class="token punctuation">&#123;</span>test<span class="token operator">:</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.css$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> use<span class="token operator">:</span><span class="token punctuation">[</span>
+       <span class="token comment">// 'style-loader', </span>
+       MiniCssExtractPlugin<span class="token punctuation">.</span>loader<span class="token punctuation">,</span>
+       <span class="token punctuation">&#123;</span>
+         loader<span class="token operator">:</span><span class="token string">'css-loader'</span><span class="token punctuation">,</span>
+         options<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+           <span class="token comment">//开启css-loader  默认是不开启的 </span>
+           modules<span class="token operator">:</span> <span class="token boolean">true</span>
+         <span class="token punctuation">&#125;</span>
+       <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+       <span class="token punctuation">&#123;</span>
+         <span class="token comment">//必须在css-loader之前使用</span>
+         loader<span class="token operator">:</span><span class="token string">'postcss-loader'</span><span class="token punctuation">,</span>
+         options<span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+       <span class="token punctuation">&#125;</span>
+     <span class="token punctuation">]</span><span class="token punctuation">&#125;</span>
+   <span class="token punctuation">]</span>
+ <span class="token punctuation">&#125;</span>
+
+ plugins<span class="token operator">:</span><span class="token punctuation">[</span><span class="token keyword">new</span> <span class="token class-name">MiniCssExtractPlugin</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+   filename<span class="token operator">:</span><span class="token string">'css/[name].css'</span>
+ <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="6-plugins-插件"><a href="#6-plugins-插件" class="headerlink" title="6.plugins 插件"></a>6.plugins 插件</h4><h5 id="6-1-CleanWebpackPlugin-每一次打包都清空打包目录"><a href="#6-1-CleanWebpackPlugin-每一次打包都清空打包目录" class="headerlink" title="6.1  CleanWebpackPlugin 每一次打包都清空打包目录"></a>6.1  CleanWebpackPlugin 每一次打包都清空打包目录</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">&#123;</span>CleanWebpackPlugin<span class="token punctuation">&#125;</span><span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'clean-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//插件</span>
 plugins<span class="token operator">:</span><span class="token punctuation">[</span><span class="token keyword">new</span> <span class="token class-name">CleanWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -558,13 +584,55 @@ devtool<span class="token operator">:</span> <span class="token string">'cheap-m
 <h4 id="8-devserver-本地开发服务-实现了代码保存一下，页面更新一下"><a href="#8-devserver-本地开发服务-实现了代码保存一下，页面更新一下" class="headerlink" title="8.devserver  本地开发服务,实现了代码保存一下，页面更新一下"></a>8.devserver  本地开发服务,实现了代码保存一下，页面更新一下</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"> <span class="token comment">// 下载 安装 webpack-dev-server</span>
 <span class="token comment">//  当遇到 Cannot find module 'webpack-cli/bin/config-yargs',更改 webpack-cli的版本到 3 则可以了</span>
  devServer<span class="token operator">:</span><span class="token punctuation">&#123;</span>
-   contentBase<span class="token operator">:</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span><span class="token string">'./dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">//绝对路径 会更快一点</span>
+   contentBase<span class="token operator">:</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span><span class="token string">'./dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">//绝对路径 会更快一点 内容的来源</span>
    open<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">//</span>
    port<span class="token operator">:</span> <span class="token number">3030</span>  <span class="token comment">//端口号 </span>
  <span class="token punctuation">&#125;</span>
  <span class="token comment">// 在package.json的 scripts 中写 </span>
    <span class="token string">"dev"</span><span class="token operator">:</span> <span class="token string">"webpack-dev-server"</span>
- <span class="token comment">// 则可以使用  npm run dev 来进行打包,但是 dist目录下并没有文件,而是因为打包后的 文件放到了内存中,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ <span class="token comment">// 则可以使用  npm run dev 来进行打包,但是 dist目录下并没有文件,而是因为打包后的 文件放到了内存中,</span>
+ <span class="token comment">// 使用proxy 反向代理解决简单的跨域</span>
+ devServer<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+   proxy<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+     <span class="token string">'/api'</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+       target<span class="token operator">:</span><span class="token string">'http://localhost:7777'</span><span class="token punctuation">,</span>
+     <span class="token punctuation">&#125;</span>
+   <span class="token punctuation">&#125;</span>
+ <span class="token punctuation">&#125;</span>
+ <span class="token comment">// 本地mock服务,解决跨域 前端本地mock数据,不打断前端的开发节奏</span>
+ <span class="token comment">// 利用devServer自带的两个钩子函数 before 服务开启前 after 服务开启后</span>
+ devServer<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+   <span class="token comment">// 相当于自身启动了一个 express 的服务,可以代替自己写的接口，模拟一些数据,实现一些交互</span>
+   <span class="token function">before</span><span class="token punctuation">(</span><span class="token parameter">app<span class="token punctuation">,</span>server</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+     app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/api/info'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span>res</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+       res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+         hello<span class="token operator">:</span><span class="token string">'world'</span>
+       <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+     <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+   <span class="token function">after</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+ <span class="token punctuation">&#125;</span>
+
+ <span class="token comment">// HMR 热模块更新 代码更新,保留之前操作的行为</span>
+ <span class="token keyword">const</span> webpack<span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack'</span><span class="token punctuation">)</span>
+ <span class="token comment">// 在plugins中新增一个插件,用时开启 hot,对于 css 不要使用抽离的loader</span>
+ plugins<span class="token operator">:</span><span class="token punctuation">[</span><span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>HotModuleReplacementPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+ devServer<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+     <span class="token comment">// HMR 热模块替换</span>
+     hot<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>   <span class="token comment">// 开启hmr</span>
+     hotOnly<span class="token operator">:</span><span class="token boolean">true</span> <span class="token comment">//即便hmr 没有生效,浏览器也不会刷新，但是不想改代码,页面刷新, 则需要 开启hotOnly</span>
+ <span class="token punctuation">&#125;</span>
+ <span class="token comment">// 对于原生的js,当改变js 文件时,页面不会出现 刷新,修改的也会出现</span>
+ <span class="token comment">// 在js文件中 使用检测的方式，当number 改变时，不刷新页面</span>
+ <span class="token keyword">if</span><span class="token punctuation">(</span>module<span class="token punctuation">.</span>hot<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+   module<span class="token punctuation">.</span>hot<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token string">'./number.js'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+     document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'number'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+     <span class="token function">number</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+ <span class="token punctuation">&#125;</span>
+ <span class="token comment">// 对于使用 react 来进行开发时</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
