@@ -4,13 +4,54 @@
   
     
     <entry>
-      <title></title>
-      <link href="posts/0.html"/>
-      <url>posts/0.html</url>
+      <title>输入网址到浏览器渲染进行了什么</title>
+      <link href="posts/7e2e.html"/>
+      <url>posts/7e2e.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
       
+      <categories>
+          
+          <category> http </category>
+          
+          <category> dns </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> http </tag>
+            
+            <tag> dns </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>webpack</title>
+      <link href="posts/3bd5.html"/>
+      <url>posts/3bd5.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、基础的一些配置-enter-output"><a href="#一、基础的一些配置-enter-output" class="headerlink" title="一、基础的一些配置(enter,output)"></a>一、基础的一些配置(enter,output)</h2><h3 id="1-entry-入口文件的设置"><a href="#1-entry-入口文件的设置" class="headerlink" title="1.entry 入口文件的设置"></a>1.entry 入口文件的设置</h3><ul><li>使用字符串 一个入口,一个出口<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li>使用数组 可以是多个入口，但是一个出口<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li>使用对象 可以是多个入口，多个出口口 (多页面应用)<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> js工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js工具 </tag>
+            
+        </tags>
       
     </entry>
     
