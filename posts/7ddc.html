@@ -444,7 +444,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h3><h5 id="实现思路-比较相邻的两个项-如果第一个比第二个大-就交换位置"><a href="#实现思路-比较相邻的两个项-如果第一个比第二个大-就交换位置" class="headerlink" title="实现思路: 比较相邻的两个项,如果第一个比第二个大,就交换位置"></a>实现思路: 比较相邻的两个项,如果第一个比第二个大,就交换位置</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">buddling</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">//arr 传入的数组</span>
+                <h2 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h2><h5 id="实现思路-比较相邻的两个项-如果第一个比第二个大-就交换位置"><a href="#实现思路-比较相邻的两个项-如果第一个比第二个大-就交换位置" class="headerlink" title="实现思路: 比较相邻的两个项,如果第一个比第二个大,就交换位置"></a>实现思路: 比较相邻的两个项,如果第一个比第二个大,就交换位置</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">buddling</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">//arr 传入的数组</span>
   <span class="token keyword">let</span> len<span class="token operator">=</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
   <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>len<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>len<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -470,7 +470,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">let</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token function">buddling</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token comment">//[1, 2, 5, 7, 8, 9]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="冒泡排序的复杂度是-O-n-2-两个循环-比较慢"><a href="#冒泡排序的复杂度是-O-n-2-两个循环-比较慢" class="headerlink" title="冒泡排序的复杂度是 O(n^2),两个循环,比较慢"></a>冒泡排序的复杂度是 O(n^2),两个循环,比较慢</h5><h3 id="2-选择排序"><a href="#2-选择排序" class="headerlink" title="2.选择排序"></a>2.选择排序</h3><h5 id="实现思路-找到数组中的最小值并将其放在第一位-接着找第二小放到第二位-依次类推"><a href="#实现思路-找到数组中的最小值并将其放在第一位-接着找第二小放到第二位-依次类推" class="headerlink" title="实现思路:找到数组中的最小值并将其放在第一位,接着找第二小放到第二位,依次类推"></a>实现思路:找到数组中的最小值并将其放在第一位,接着找第二小放到第二位,依次类推</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">selectSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">//arr 传入的数组</span>
+<h5 id="冒泡排序的复杂度是-O-n-2-两个循环-比较慢"><a href="#冒泡排序的复杂度是-O-n-2-两个循环-比较慢" class="headerlink" title="冒泡排序的复杂度是 O(n^2),两个循环,比较慢"></a>冒泡排序的复杂度是 O(n^2),两个循环,比较慢</h5><h2 id="2-选择排序"><a href="#2-选择排序" class="headerlink" title="2.选择排序"></a>2.选择排序</h2><h5 id="实现思路-找到数组中的最小值并将其放在第一位-接着找第二小放到第二位-依次类推"><a href="#实现思路-找到数组中的最小值并将其放在第一位-接着找第二小放到第二位-依次类推" class="headerlink" title="实现思路:找到数组中的最小值并将其放在第一位,接着找第二小放到第二位,依次类推"></a>实现思路:找到数组中的最小值并将其放在第一位,接着找第二小放到第二位,依次类推</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">selectSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">//arr 传入的数组</span>
   <span class="token keyword">let</span> len<span class="token operator">=</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
   <span class="token keyword">let</span> minIndex<span class="token punctuation">;</span> <span class="token comment">//最小值的索引</span>
   <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>len<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -488,7 +488,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">let</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token function">selectSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token comment">//[1, 2, 5, 6, 7, 8, 9]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="选择排序的复杂度同样也是-O-n-2-两个循环"><a href="#选择排序的复杂度同样也是-O-n-2-两个循环" class="headerlink" title="选择排序的复杂度同样也是 O(n^2),两个循环"></a>选择排序的复杂度同样也是 O(n^2),两个循环</h5><h3 id="3-插入排序"><a href="#3-插入排序" class="headerlink" title="3.插入排序"></a>3.插入排序</h3><h5 id="实现思路-每次排一个数组项-以此方式构建最后的排序数组"><a href="#实现思路-每次排一个数组项-以此方式构建最后的排序数组" class="headerlink" title="实现思路: 每次排一个数组项,以此方式构建最后的排序数组"></a>实现思路: 每次排一个数组项,以此方式构建最后的排序数组</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">insertSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">//arr 传入的数组</span>
+<h5 id="选择排序的复杂度同样也是-O-n-2-两个循环"><a href="#选择排序的复杂度同样也是-O-n-2-两个循环" class="headerlink" title="选择排序的复杂度同样也是 O(n^2),两个循环"></a>选择排序的复杂度同样也是 O(n^2),两个循环</h5><h2 id="3-插入排序"><a href="#3-插入排序" class="headerlink" title="3.插入排序"></a>3.插入排序</h2><h5 id="实现思路-每次排一个数组项-以此方式构建最后的排序数组"><a href="#实现思路-每次排一个数组项-以此方式构建最后的排序数组" class="headerlink" title="实现思路: 每次排一个数组项,以此方式构建最后的排序数组"></a>实现思路: 每次排一个数组项,以此方式构建最后的排序数组</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">insertSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">//arr 传入的数组</span>
   <span class="token keyword">let</span> len<span class="token operator">=</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
   <span class="token keyword">let</span> middle<span class="token punctuation">;</span> <span class="token comment">//表示当前插入值的位置</span>
   <span class="token keyword">let</span> middleValue<span class="token punctuation">;</span> <span class="token comment">//当前的值 </span>
@@ -505,7 +505,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">let</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token function">insertSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token comment">//[1, 2, 5, 6, 7, 8, 9]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="插入排序的复杂度同样也是-O-n-2"><a href="#插入排序的复杂度同样也是-O-n-2" class="headerlink" title="插入排序的复杂度同样也是 O(n^2)"></a>插入排序的复杂度同样也是 O(n^2)</h5><h3 id="4-归并排序"><a href="#4-归并排序" class="headerlink" title="4.归并排序"></a>4.归并排序</h3><h5 id="实现思路-利用分治的方法-先将数组拆成一个长度为1的数组-然后然后再一个一个合并成大数组并排序"><a href="#实现思路-利用分治的方法-先将数组拆成一个长度为1的数组-然后然后再一个一个合并成大数组并排序" class="headerlink" title="实现思路: 利用分治的方法,先将数组拆成一个长度为1的数组,然后然后再一个一个合并成大数组并排序"></a>实现思路: 利用分治的方法,先将数组拆成一个长度为1的数组,然后然后再一个一个合并成大数组并排序</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">mergeSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">//</span>
+<h5 id="插入排序的复杂度同样也是-O-n-2"><a href="#插入排序的复杂度同样也是-O-n-2" class="headerlink" title="插入排序的复杂度同样也是 O(n^2)"></a>插入排序的复杂度同样也是 O(n^2)</h5><h2 id="4-归并排序"><a href="#4-归并排序" class="headerlink" title="4.归并排序"></a>4.归并排序</h2><h5 id="实现思路-利用分治的方法-先将数组拆成一个长度为1的数组-然后然后再一个一个合并成大数组并排序"><a href="#实现思路-利用分治的方法-先将数组拆成一个长度为1的数组-然后然后再一个一个合并成大数组并排序" class="headerlink" title="实现思路: 利用分治的方法,先将数组拆成一个长度为1的数组,然后然后再一个一个合并成大数组并排序"></a>实现思路: 利用分治的方法,先将数组拆成一个长度为1的数组,然后然后再一个一个合并成大数组并排序</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">mergeSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">//</span>
   <span class="token comment">//arr的长度等于1,直接返回</span>
   <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span>length<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> arr
  <span class="token comment">//arr的长度大于1</span>
@@ -537,7 +537,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">&#125;</span>
 <span class="token keyword">let</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">mergeSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//[1, 2, 5, 6, 7, 8, 9]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="归并排序的复杂度同样也是-O-nlog-n"><a href="#归并排序的复杂度同样也是-O-nlog-n" class="headerlink" title="归并排序的复杂度同样也是 O(nlog n)"></a>归并排序的复杂度同样也是 O(nlog n)</h5><h3 id="5-快速排序"><a href="#5-快速排序" class="headerlink" title="5.快速排序"></a>5.快速排序</h3><h5 id="实现思路-利用分治的方法"><a href="#实现思路-利用分治的方法" class="headerlink" title="实现思路: 利用分治的方法,"></a>实现思路: 利用分治的方法,</h5><h5 id="快速排序的复杂度同样也是-O-nlog-n"><a href="#快速排序的复杂度同样也是-O-nlog-n" class="headerlink" title="快速排序的复杂度同样也是 O(nlog n)"></a>快速排序的复杂度同样也是 O(nlog n)</h5>
+<h5 id="归并排序的复杂度同样也是-O-nlog-n"><a href="#归并排序的复杂度同样也是-O-nlog-n" class="headerlink" title="归并排序的复杂度同样也是 O(nlog n)"></a>归并排序的复杂度同样也是 O(nlog n)</h5><h2 id="5-快速排序"><a href="#5-快速排序" class="headerlink" title="5.快速排序"></a>5.快速排序</h2><h5 id="实现思路-利用分治的方法"><a href="#实现思路-利用分治的方法" class="headerlink" title="实现思路: 利用分治的方法,"></a>实现思路: 利用分治的方法,</h5><h5 id="快速排序的复杂度同样也是-O-nlog-n"><a href="#快速排序的复杂度同样也是-O-nlog-n" class="headerlink" title="快速排序的复杂度同样也是 O(nlog n)"></a>快速排序的复杂度同样也是 O(nlog n)</h5>
                 
             </div>
             <hr/>
@@ -654,13 +654,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/3bd5.html">
+                <a href="/posts/0.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="webpack">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">webpack</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -671,27 +671,15 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-22
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/js%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    js工具
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Hearter
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/js%E5%B7%A5%E5%85%B7/">
-                        <span class="chip bg-color">js工具</span>
-                    </a>
-                    
                 </div>
                 
             </div>
