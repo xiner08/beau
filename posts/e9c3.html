@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="简单实现vue源码, HTML,CSS,JavaScript,VUE,REACT,node,webpack等">
+    <meta name="keywords" content="vue响应式原理, HTML,CSS,JavaScript,VUE,REACT,node,webpack等">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>简单实现vue源码 | Hearter</title>
+    <title>vue响应式原理 | Hearter</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">简单实现vue源码</h1>
+                    <h1 class="description center-align post-title">vue响应式原理</h1>
                 </div>
             </div>
         </div>
@@ -412,7 +412,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-12
+                    2020-11-12
                 </div>
                 
 
@@ -436,17 +436,86 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="vue是一个mvvm框架"><a href="#vue是一个mvvm框架" class="headerlink" title="vue是一个mvvm框架"></a>vue是一个mvvm框架</h5><h5 id="mvvm框架实现的三要素是-数据响应式、模板引擎及其渲染"><a href="#mvvm框架实现的三要素是-数据响应式、模板引擎及其渲染" class="headerlink" title="mvvm框架实现的三要素是: 数据响应式、模板引擎及其渲染"></a>mvvm框架实现的三要素是: 数据响应式、模板引擎及其渲染</h5><h5 id="数据响应式-监听数据变化并在视图中更新"><a href="#数据响应式-监听数据变化并在视图中更新" class="headerlink" title="数据响应式: 监听数据变化并在视图中更新"></a>数据响应式: 监听数据变化并在视图中更新</h5><ul>
+                <h5 id="vue是一个mvvm框架-手写实现MVVM的-响应式原理"><a href="#vue是一个mvvm框架-手写实现MVVM的-响应式原理" class="headerlink" title="vue是一个mvvm框架,手写实现MVVM的 响应式原理"></a>vue是一个mvvm框架,手写实现MVVM的 响应式原理</h5><h5 id="mvvm框架实现的三要素是-数据响应式、模板引擎及其渲染"><a href="#mvvm框架实现的三要素是-数据响应式、模板引擎及其渲染" class="headerlink" title="mvvm框架实现的三要素是: 数据响应式、模板引擎及其渲染"></a>mvvm框架实现的三要素是: 数据响应式、模板引擎及其渲染</h5><h5 id="数据响应式-监听数据变化并在视图中更新"><a href="#数据响应式-监听数据变化并在视图中更新" class="headerlink" title="数据响应式: 监听数据变化并在视图中更新"></a>数据响应式: 监听数据变化并在视图中更新</h5><ul>
 <li>Object.defineProperty() </li>
 <li>Proxy </li>
 </ul>
 <h5 id="模板引擎-提供描述试图的模板语法"><a href="#模板引擎-提供描述试图的模板语法" class="headerlink" title="模板引擎: 提供描述试图的模板语法"></a>模板引擎: 提供描述试图的模板语法</h5><ul>
 <li>插值 </li>
 <li>指令: v-bind、v-on、v-html、v-if、v-for
- <h5 id="渲染-将模板转换为html"><a href="#渲染-将模板转换为html" class="headerlink" title="渲染: 将模板转换为html"></a>渲染: 将模板转换为html</h5></li>
+ </li>
+</ul>
+<h5 id="渲染-将模板转换为html"><a href="#渲染-将模板转换为html" class="headerlink" title="渲染: 将模板转换为html"></a>渲染: 将模板转换为html</h5><ul>
 <li>模板 =&gt; vdom =&gt; dom</li>
 </ul>
+<h2 id="一、实现一个属性的响应式"><a href="#一、实现一个属性的响应式" class="headerlink" title="一、实现一个属性的响应式"></a>一、实现一个属性的响应式</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//响应式函数</span>
+<span class="token keyword">function</span> <span class="token function">defineReactive</span><span class="token punctuation">(</span><span class="token parameter">obj<span class="token punctuation">,</span>key<span class="token punctuation">,</span>val</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span>key<span class="token punctuation">,</span><span class="token punctuation">&#123;</span>
+    <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'get '</span><span class="token operator">+</span> key <span class="token operator">+</span><span class="token string">' '</span><span class="token operator">+</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> val<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">set</span><span class="token punctuation">(</span>newVal<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>newVal<span class="token operator">!==</span> val<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'set '</span><span class="token operator">+</span> key <span class="token operator">+</span><span class="token string">' '</span><span class="token operator">+</span> newVal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        val<span class="token operator">=</span>newVal<span class="token punctuation">;</span>
+        <span class="token comment">//数据改变时,更新函数</span>
+        <span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//更新函数</span>
+<span class="token keyword">function</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  app<span class="token punctuation">.</span>innerText<span class="token operator">=</span>obj<span class="token punctuation">.</span>foo
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="二、实现一个对象的响应式"><a href="#二、实现一个对象的响应式" class="headerlink" title="二、实现一个对象的响应式"></a>二、实现一个对象的响应式</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">defineReactive</span><span class="token punctuation">(</span><span class="token parameter">obj<span class="token punctuation">,</span>key<span class="token punctuation">,</span>val</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token comment">//如果传入的值是对象,那么也要做响应式处理 </span>
+  <span class="token function">observer</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span>
+  Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span>key<span class="token punctuation">,</span><span class="token punctuation">&#123;</span>
+    <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'get '</span><span class="token operator">+</span> key <span class="token operator">+</span><span class="token string">' '</span><span class="token operator">+</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> val<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">set</span><span class="token punctuation">(</span>newVal<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>newVal<span class="token operator">!==</span> val<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">//若果set传入的值也是对象,也给他响应式处理</span>
+        <span class="token function">observer</span><span class="token punctuation">(</span>newVal<span class="token punctuation">)</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'set '</span><span class="token operator">+</span> key <span class="token operator">+</span><span class="token string">' '</span><span class="token operator">+</span> newVal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        val<span class="token operator">=</span>newVal<span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 对于新添加的属性,没有响应式处理,需要新添加一个方法</span>
+<span class="token keyword">function</span> <span class="token function">set</span><span class="token punctuation">(</span><span class="token parameter">obj<span class="token punctuation">,</span>key<span class="token punctuation">,</span>val</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token function">defineReactive</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span>key<span class="token punctuation">,</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//</span>
+<span class="token keyword">function</span> <span class="token function">observer</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> obj <span class="token operator">!==</span><span class="token string">'object'</span> <span class="token operator">||</span> <span class="token keyword">typeof</span> obj <span class="token operator">==</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span>
+  <span class="token punctuation">&#125;</span>
+  Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">key</span> <span class="token operator">=></span><span class="token punctuation">&#123;</span>
+    <span class="token function">defineReactive</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span>key<span class="token punctuation">,</span>obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
 
+<span class="token keyword">const</span> obj<span class="token operator">=</span><span class="token punctuation">&#123;</span>foo<span class="token operator">:</span><span class="token string">'foo'</span><span class="token punctuation">,</span>bar<span class="token operator">:</span><span class="token string">'bar'</span><span class="token punctuation">,</span>baz<span class="token operator">:</span><span class="token punctuation">&#123;</span>a<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+
+<span class="token function">observer</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="三、简单实现vue的响应式原理"><a href="#三、简单实现vue的响应式原理" class="headerlink" title="三、简单实现vue的响应式原理"></a>三、简单实现vue的响应式原理</h2><ul>
+<li>XVue 框架构造函数</li>
+<li>Observer 执行数据响应化,并分辨数据是对象还是数组</li>
+<li>Compile 编译模板，初始化视图,收集依赖</li>
+<li>Watcher 执行更新函数</li>
+<li>Dep 管理多个watcher，批量更新</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -555,17 +624,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/8010.html">
+                <a href="/posts/e9c3.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="leetcode第10题:正则表达式匹配">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="vue响应式原理">
                         
-                        <span class="card-title">leetcode第10题:正则表达式匹配</span>
+                        <span class="card-title">vue响应式原理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -575,34 +645,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/leetcode/" class="post-category">
-                                    leetcode
-                                </a>
-                            
-                            <a href="/categories/leetcode/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/categories/vue/" class="post-category">
+                                    vue
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leetcode/">
-                        <span class="chip bg-color">leetcode</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
@@ -616,13 +679,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/42c6.html">
+                <a href="/posts/7e2e.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="leetcode第9题:回文数">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="输入网址到浏览器渲染进行了什么">
                         
-                        <span class="card-title">leetcode第9题:回文数</span>
+                        <span class="card-title">输入网址到浏览器渲染进行了什么</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -633,18 +696,18 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/leetcode/" class="post-category">
-                                    leetcode
+                            <a href="/categories/http/" class="post-category">
+                                    http
                                 </a>
                             
-                            <a href="/categories/leetcode/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/categories/http/dns/" class="post-category">
+                                    dns
                                 </a>
                             
                             
@@ -654,12 +717,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leetcode/">
-                        <span class="chip bg-color">leetcode</span>
+                    <a href="/tags/http/">
+                        <span class="chip bg-color">http</span>
                     </a>
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/dns/">
+                        <span class="chip bg-color">dns</span>
                     </a>
                     
                 </div>

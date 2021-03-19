@@ -436,7 +436,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="防抖和节流属于性能优化的知识，防止浏览器一直触发同一类事件，而进行的优化方案。"><a href="#防抖和节流属于性能优化的知识，防止浏览器一直触发同一类事件，而进行的优化方案。" class="headerlink" title="防抖和节流属于性能优化的知识，防止浏览器一直触发同一类事件，而进行的优化方案。"></a>防抖和节流属于性能优化的知识，防止浏览器一直触发同一类事件，而进行的优化方案。</h5><h2 id="一、防抖-debounce"><a href="#一、防抖-debounce" class="headerlink" title="一、防抖 debounce"></a>一、防抖 debounce</h2><h5 id="对于短时间内连续触发的事件，防抖就是让某个时间期限内，事件处理函数只执行一次"><a href="#对于短时间内连续触发的事件，防抖就是让某个时间期限内，事件处理函数只执行一次" class="headerlink" title="对于短时间内连续触发的事件，防抖就是让某个时间期限内，事件处理函数只执行一次"></a>对于短时间内连续触发的事件，防抖就是让某个时间期限内，事件处理函数只执行一次</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/*
+                <h5 id="防抖和节流属于性能优化的知识，防止浏览器一直触发同一类事件，而进行的优化方案。注意的是要让需要防抖和节流优化的操作等于-防抖和节流内部返回的函数-而不是其本身"><a href="#防抖和节流属于性能优化的知识，防止浏览器一直触发同一类事件，而进行的优化方案。注意的是要让需要防抖和节流优化的操作等于-防抖和节流内部返回的函数-而不是其本身" class="headerlink" title="防抖和节流属于性能优化的知识，防止浏览器一直触发同一类事件，而进行的优化方案。注意的是要让需要防抖和节流优化的操作等于 防抖和节流内部返回的函数,而不是其本身"></a>防抖和节流属于性能优化的知识，防止浏览器一直触发同一类事件，而进行的优化方案。注意的是要让需要防抖和节流优化的操作等于 防抖和节流内部返回的函数,而不是其本身</h5><h2 id="一、防抖-debounce"><a href="#一、防抖-debounce" class="headerlink" title="一、防抖 debounce"></a>一、防抖 debounce</h2><ul>
+<li>对于短时间内连续触发的事件，防抖就是让某个时间期限内，事件处理函数只执行一次</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/*
   fn 指的是执行的函数
   delay 指的是延迟的时间
 */</span>
@@ -456,7 +459,11 @@
 <span class="token punctuation">&#125;</span>
 <span class="token comment">// window.onscroll=scrollTop //一直在打印</span>
 window<span class="token punctuation">.</span>onscroll<span class="token operator">=</span><span class="token function">debounce</span><span class="token punctuation">(</span>scrollTop<span class="token punctuation">,</span><span class="token number">500</span><span class="token punctuation">)</span> <span class="token comment">//滚动停止后打印</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二、节流-throttle"><a href="#二、节流-throttle" class="headerlink" title="二、节流 throttle"></a>二、节流 throttle</h2><h5 id="如果短时间大量触发同一事件，在函数执行一次之后，该函数在指定的时间期限内不再工作，直到过了这段时间才生效"><a href="#如果短时间大量触发同一事件，在函数执行一次之后，该函数在指定的时间期限内不再工作，直到过了这段时间才生效" class="headerlink" title="如果短时间大量触发同一事件，在函数执行一次之后，该函数在指定的时间期限内不再工作，直到过了这段时间才生效"></a>如果短时间大量触发同一事件，在函数执行一次之后，该函数在指定的时间期限内不再工作，直到过了这段时间才生效</h5><h5 id="用setTimeout实现"><a href="#用setTimeout实现" class="headerlink" title="用setTimeout实现"></a>用setTimeout实现</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/*
+
+<h2 id="二、节流-throttle"><a href="#二、节流-throttle" class="headerlink" title="二、节流 throttle"></a>二、节流 throttle</h2><h5 id="如果短时间大量触发同一事件，在函数执行一次之后，该函数在指定的时间期限内不再工作，直到过了这段时间才生效"><a href="#如果短时间大量触发同一事件，在函数执行一次之后，该函数在指定的时间期限内不再工作，直到过了这段时间才生效" class="headerlink" title="如果短时间大量触发同一事件，在函数执行一次之后，该函数在指定的时间期限内不再工作，直到过了这段时间才生效"></a>如果短时间大量触发同一事件，在函数执行一次之后，该函数在指定的时间期限内不再工作，直到过了这段时间才生效</h5><ul>
+<li>用setTimeout实现</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/*
   fn 指的是执行的函数
   delay 指的是延迟的时间
 */</span>
@@ -480,7 +487,11 @@ window<span class="token punctuation">.</span>onscroll<span class="token operato
 <span class="token punctuation">&#125;</span>
 <span class="token comment">// window.onscroll=scrollTop //一直在打印</span>
 window<span class="token punctuation">.</span>onscroll<span class="token operator">=</span><span class="token function">throttle</span><span class="token punctuation">(</span>scrollTop<span class="token punctuation">,</span><span class="token number">500</span><span class="token punctuation">)</span> <span class="token comment">//0.5s的间隔输出</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="用-new-Date实现"><a href="#用-new-Date实现" class="headerlink" title="用 new Date实现"></a>用 new Date实现</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js">  <span class="token comment">/*
+
+<ul>
+<li>用 new Date实现</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">  <span class="token comment">/*
     fn 指的是执行的函数
     delay 指的是延迟的时间
   */</span>
@@ -509,7 +520,20 @@ window<span class="token punctuation">.</span>onscroll<span class="token operato
   <span class="token punctuation">&#125;</span>
 <span class="token comment">// window.onscroll=scrollTop //一直在打印</span>
 window<span class="token punctuation">.</span>onscroll<span class="token operator">=</span><span class="token function">throttle</span><span class="token punctuation">(</span>scrollTop<span class="token punctuation">,</span><span class="token number">500</span><span class="token punctuation">)</span> <span class="token comment">//0.5s的间隔输出</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="总的来说-防抖是将多次执行变为只执行一次，节流是将多次执行变为每隔一段时间执行。"><a href="#总的来说-防抖是将多次执行变为只执行一次，节流是将多次执行变为每隔一段时间执行。" class="headerlink" title="总的来说:防抖是将多次执行变为只执行一次，节流是将多次执行变为每隔一段时间执行。"></a>总的来说:防抖是将多次执行变为只执行一次，节流是将多次执行变为每隔一段时间执行。</h5><h2 id="三、应用场景"><a href="#三、应用场景" class="headerlink" title="三、应用场景"></a>三、应用场景</h2><h5 id="防抖"><a href="#防抖" class="headerlink" title="防抖:"></a>防抖:</h5><h5 id="search搜索联想，用户在不断输入值时，用防抖来节约请求资源。"><a href="#search搜索联想，用户在不断输入值时，用防抖来节约请求资源。" class="headerlink" title="search搜索联想，用户在不断输入值时，用防抖来节约请求资源。"></a>search搜索联想，用户在不断输入值时，用防抖来节约请求资源。</h5><h5 id="window触发resize的时候，不断的调整浏览器窗口大小会不断的触发这个事件，用防抖来让其只触发一次"><a href="#window触发resize的时候，不断的调整浏览器窗口大小会不断的触发这个事件，用防抖来让其只触发一次" class="headerlink" title="window触发resize的时候，不断的调整浏览器窗口大小会不断的触发这个事件，用防抖来让其只触发一次"></a>window触发resize的时候，不断的调整浏览器窗口大小会不断的触发这个事件，用防抖来让其只触发一次</h5><h5 id="节流"><a href="#节流" class="headerlink" title="节流:"></a>节流:</h5><h5 id="鼠标不断点击触发，mousedown-单位时间内只触发一次"><a href="#鼠标不断点击触发，mousedown-单位时间内只触发一次" class="headerlink" title="鼠标不断点击触发，mousedown(单位时间内只触发一次)"></a>鼠标不断点击触发，mousedown(单位时间内只触发一次)</h5><h5 id="监听滚动事件，比如是否滑到底部自动加载更多，用throttle来判断"><a href="#监听滚动事件，比如是否滑到底部自动加载更多，用throttle来判断" class="headerlink" title="监听滚动事件，比如是否滑到底部自动加载更多，用throttle来判断"></a>监听滚动事件，比如是否滑到底部自动加载更多，用throttle来判断</h5>
+
+<h6 id="总的来说-防抖是将多次执行变为只执行一次，节流是将多次执行变为每隔一段时间执行。"><a href="#总的来说-防抖是将多次执行变为只执行一次，节流是将多次执行变为每隔一段时间执行。" class="headerlink" title="总的来说:防抖是将多次执行变为只执行一次，节流是将多次执行变为每隔一段时间执行。"></a>总的来说:防抖是将多次执行变为只执行一次，节流是将多次执行变为每隔一段时间执行。</h6><h2 id="三、应用场景"><a href="#三、应用场景" class="headerlink" title="三、应用场景"></a>三、应用场景</h2><ul>
+<li>防抖:<ul>
+<li> search搜索联想，用户在不断输入值时，用防抖来节约请求资源。</li>
+<li> window触发resize的时候，不断的调整浏览器窗口大小会不断的触发这个事件，用防抖来让其只触发一次</li>
+</ul>
+</li>
+<li>节流:<ul>
+<li>鼠标不断点击触发，mousedown(单位时间内只触发一次)</li>
+<li>监听滚动事件，比如是否滑到底部自动加载更多，用throttle来判断</li>
+</ul>
+</li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -622,13 +646,13 @@ window<span class="token punctuation">.</span>onscroll<span class="token operato
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/ffd3.html">
+                <a href="/posts/f609.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="js继承">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="函数式编程">
                         
-                        <span class="card-title">js继承</span>
+                        <span class="card-title">函数式编程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -639,7 +663,7 @@ window<span class="token punctuation">.</span>onscroll<span class="token operato
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-19
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-12
                         </span>
                         <span class="publish-author">
                             

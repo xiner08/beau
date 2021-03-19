@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="leetcode第9题:回文数, HTML,CSS,JavaScript,VUE,REACT,node,webpack等">
+    <meta name="keywords" content="vue-router 实现, HTML,CSS,JavaScript,VUE,REACT,node,webpack等">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>leetcode第9题:回文数 | Hearter</title>
+    <title>vue-router 实现 | Hearter</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">leetcode第9题:回文数</h1>
+                    <h1 class="description center-align post-title">vue-router 实现</h1>
                 </div>
             </div>
         </div>
@@ -387,12 +387,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/leetcode/">
-                                <span class="chip bg-color">leetcode</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
                             </a>
                         
                     </div>
@@ -403,12 +399,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/leetcode/" class="post-category">
-                                leetcode
-                            </a>
-                        
-                            <a href="/categories/leetcode/%E7%AE%97%E6%B3%95/" class="post-category">
-                                算法
+                            <a href="/categories/vue/" class="post-category">
+                                vue
                             </a>
                         
                     </div>
@@ -420,7 +412,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-09
+                    2020-11-02
                 </div>
                 
 
@@ -444,31 +436,148 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="给你一个整数x-，如果-x-是一个回文整数，返回-true-；否则，返回-false-。"><a href="#给你一个整数x-，如果-x-是一个回文整数，返回-true-；否则，返回-false-。" class="headerlink" title="给你一个整数x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。"></a>给你一个整数x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。</h5><h6 id="回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。例如，121-是回文，而-123-不是。"><a href="#回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。例如，121-是回文，而-123-不是。" class="headerlink" title="回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。例如，121 是回文，而 123 不是。"></a>回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。例如，121 是回文，而 123 不是。</h6><h3 id="使用遍历的方法"><a href="#使用遍历的方法" class="headerlink" title="使用遍历的方法"></a>使用遍历的方法</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
- * @param &#123;number&#125; x
- * @return &#123;boolean&#125;
- */</span>
-<span class="token keyword">var</span> <span class="token function-variable function">isPalindrome</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> x <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span>
-    <span class="token keyword">let</span> j <span class="token operator">=</span> <span class="token string">''</span> <span class="token operator">+</span> x<span class="token punctuation">;</span>
-    <span class="token keyword">let</span> is_wen <span class="token operator">=</span> <span class="token boolean">true</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token function">parseInt</span><span class="token punctuation">(</span> <span class="token punctuation">(</span>j<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>j<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> j<span class="token punctuation">[</span>j<span class="token punctuation">.</span>length<span class="token operator">-</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            is_wen<span class="token operator">=</span><span class="token boolean">false</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">return</span> is_wen
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h2 id="一、hash-和-history区别"><a href="#一、hash-和-history区别" class="headerlink" title="一、hash 和 history区别"></a>一、hash 和 history区别</h2><ul>
+<li><p>hash 模式</p>
+<ul>
+<li>url#后面的内容是路由地址;</li>
+<li>通过location改变路由地址,并将其写入到浏览器的访问历史;</li>
+<li>当url发生变化时,通过hashchange 事件监听路由变化,并根据路由地址找到对应的组件重新渲染</li>
+</ul>
+</li>
+<li><p>history 模式</p>
+<ul>
+<li>通过history.pushState 和push.replaceState 改变路由地址,并记录到浏览器历史,但不会向浏览器发送请求;</li>
+<li>popstate事件并不会因为 pushState和replaceState触发,而是通过浏览器的前进和后退触发，history.back 和history.forword;</li>
+<li>地址改变后,通过相应的地址进行渲染</li>
+<li>当页面刷新后，会重新向浏览器发送请求,但浏览器除了index并没有进行其他的配置,则就会返回404,因此需要后台配合一下，设置其他路由时，返回index页面</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、vue-router-实现原理-history"><a href="#二、vue-router-实现原理-history" class="headerlink" title="二、vue-router 实现原理(history)"></a>二、vue-router 实现原理(history)</h2><h5 id="需要用到的vue知识"><a href="#需要用到的vue知识" class="headerlink" title="需要用到的vue知识:"></a>需要用到的vue知识:</h5><ul>
+<li><p>Vue.use() 调用依赖于vue的插件,注册插件</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
+ * vue.use 调用插件,接受两个参数
+ * 函数,内部会执行这个函数
+ * 对象,执行对象的install方法
+*/</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueRouter<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>mixin 混入</p>
+</li>
+<li><p>Vue.observable() 响应式</p>
+</li>
+<li><p>slot 插槽</p>
+</li>
+<li><p>render 函数,形成虚拟DOM</p>
+</li>
+<li><p>运行时的Vue 和完整版的Vue </p>
+</li>
+</ul>
+<h3 id="实现简单的VueRouter的类"><a href="#实现简单的VueRouter的类" class="headerlink" title="实现简单的VueRouter的类"></a>实现简单的VueRouter的类</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
+ *  _Vue 注册时,成为vue的全局变量
+ *  install 判断插件是否安装,并将router实例添加到vue的原型上
+ *  init 执行方法的综合
+ *  createRouteMap 实现 建立路径和组建的关系
+ *  initEvent 创建 popstate事件, 使用户点击前进后退也可以进行响应式的渲染
+ *  initComponents 创建 router-link router-view 使用render函数
+*/</span>
 
-<h3 id="简单粗暴方法"><a href="#简单粗暴方法" class="headerlink" title="简单粗暴方法"></a>简单粗暴方法</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
- * @param &#123;number&#125; x
- * @return &#123;boolean&#125;
- */</span>
-<span class="token keyword">var</span> <span class="token function-variable function">isPalindrome</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> <span class="token function">Number</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>x<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">===</span> x
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">let</span> _Vue <span class="token operator">=</span> <span class="token keyword">null</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">VueRouter</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// 构造函数</span>
+  <span class="token function">constructor</span> <span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 拿到传过来的参数 routes mode 等等</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$options <span class="token operator">=</span> options
+    <span class="token comment">// 存储路由地址和组件  键是当前路径  值是组件</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>routeMap <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+    <span class="token comment">// 当前的路由地址 _Vue.observable() 把数据变成响应式的数据</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> _Vue<span class="token punctuation">.</span><span class="token function">observable</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+      current<span class="token operator">:</span> <span class="token string">'/'</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">static</span> <span class="token function">install</span> <span class="token punctuation">(</span><span class="token parameter">Vue</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 1.判断插件是否已经安装,未安装----安装</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>VueRouter<span class="token punctuation">.</span>install<span class="token punctuation">.</span>installed<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span>
+    <span class="token punctuation">&#125;</span>
+    VueRouter<span class="token punctuation">.</span>install<span class="token punctuation">.</span>installed <span class="token operator">=</span> <span class="token boolean">true</span>
+    <span class="token comment">// 2.把vue构造函数记录在全局变量</span>
+    _Vue <span class="token operator">=</span> Vue
+    <span class="token comment">// 3.把创建的router注入到Vue实例上</span>
+    <span class="token comment">// 使用 混入给所有的vue组件添加</span>
+    _Vue<span class="token punctuation">.</span><span class="token function">mixin</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+      <span class="token function">beforeCreate</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$options<span class="token punctuation">.</span>router<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          <span class="token comment">// this指向的是当前组件</span>
+          <span class="token class-name">_Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$router <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$options<span class="token punctuation">.</span>router
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$options<span class="token punctuation">.</span>router<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token function">init</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">createRouteMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initComponents</span><span class="token punctuation">(</span>_Vue<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token function">createRouteMap</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 遍历所有的路由规则,把路由解析成键值对的形式,储存到routeMap中</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$options<span class="token punctuation">.</span>routes<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">route</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>routeMap<span class="token punctuation">[</span> route<span class="token punctuation">.</span>path <span class="token punctuation">]</span> <span class="token operator">=</span> route<span class="token punctuation">.</span>component
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token comment">// 点击前进后退键 可以实现相应式</span>
+  <span class="token function">initEvent</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'popstate'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token comment">// window.location.pathname 当前url的路径部分</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>current <span class="token operator">=</span> window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>pathname
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token function">initComponents</span> <span class="token punctuation">(</span><span class="token parameter">Vue</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 目前支持了,可以实现</span>
+    <span class="token comment">// Vue.component('router-link', &#123;</span>
+    <span class="token comment">//   props: &#123;</span>
+    <span class="token comment">//     to: String</span>
+    <span class="token comment">//   &#125;,</span>
+    <span class="token comment">//   template: '&lt;a :href="to">&lt;slot>&lt;/slot>&lt;/a>'</span>
+    <span class="token comment">// &#125;)</span>
+    Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'router-link'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+      props<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        to<span class="token operator">:</span> String
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token function">render</span> <span class="token punctuation">(</span><span class="token parameter">h</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token function">h</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+          attrs<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            href<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>to
+          <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+          on<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            click<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>clickHandler
+          <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>$slots<span class="token punctuation">.</span>default<span class="token punctuation">]</span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      methods<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">clickHandler</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          history<span class="token punctuation">.</span><span class="token function">pushState</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>to<span class="token punctuation">)</span>
+          <span class="token comment">// 改变当前响应式的路由地址</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span>data<span class="token punctuation">.</span>current <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>to
+
+          <span class="token comment">// 阻止浏览器跳转</span>
+          e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> self <span class="token operator">=</span> <span class="token keyword">this</span>
+    Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'router-view'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+      <span class="token function">render</span> <span class="token punctuation">(</span><span class="token parameter">h</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">const</span> component <span class="token operator">=</span> self<span class="token punctuation">.</span>routeMap<span class="token punctuation">[</span> self<span class="token punctuation">.</span>data<span class="token punctuation">.</span>current <span class="token punctuation">]</span>
+        <span class="token keyword">return</span> <span class="token function">h</span><span class="token punctuation">(</span>component<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
@@ -494,7 +603,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xiner08.github.io/posts/42c6.html">http://xiner08.github.io/posts/42c6.html</a>
+                    <a href="http://xiner08.github.io/posts/9548.html">http://xiner08.github.io/posts/9548.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -532,12 +641,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/leetcode/">
-                                    <span class="chip bg-color">leetcode</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
                                 </a>
                             
                         </div>
@@ -585,13 +690,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/8010.html">
+                <a href="/posts/7e2e.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="leetcode第10题:正则表达式匹配">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="输入网址到浏览器渲染进行了什么">
                         
-                        <span class="card-title">leetcode第10题:正则表达式匹配</span>
+                        <span class="card-title">输入网址到浏览器渲染进行了什么</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -602,18 +707,18 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-02
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/leetcode/" class="post-category">
-                                    leetcode
+                            <a href="/categories/http/" class="post-category">
+                                    http
                                 </a>
                             
-                            <a href="/categories/leetcode/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/categories/http/dns/" class="post-category">
+                                    dns
                                 </a>
                             
                             
@@ -623,12 +728,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leetcode/">
-                        <span class="chip bg-color">leetcode</span>
+                    <a href="/tags/http/">
+                        <span class="chip bg-color">http</span>
                     </a>
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/dns/">
+                        <span class="chip bg-color">dns</span>
                     </a>
                     
                 </div>
@@ -642,13 +747,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/ea5a.html">
+                <a href="/posts/3bd5.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="leetcode第8题:字符串转换整数">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="webpack">
                         
-                        <span class="card-title">leetcode第8题:字符串转换整数</span>
+                        <span class="card-title">webpack</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -659,18 +764,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/leetcode/" class="post-category">
-                                    leetcode
-                                </a>
-                            
-                            <a href="/categories/leetcode/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/categories/js%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    js工具
                                 </a>
                             
                             
@@ -680,12 +781,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leetcode/">
-                        <span class="chip bg-color">leetcode</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/js%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">js工具</span>
                     </a>
                     
                 </div>
