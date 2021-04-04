@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 
@@ -477,6 +477,7 @@ heart1<span class="token punctuation">.</span><span class="token function-variab
 <span class="token punctuation">&#125;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>heart1<span class="token punctuation">.</span>__proto__<span class="token operator">===</span> <span class="token class-name">Heart</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token comment">//true</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>heart1<span class="token punctuation">.</span>constructor<span class="token operator">===</span> Heart<span class="token punctuation">)</span> <span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="二、原型链"><a href="#二、原型链" class="headerlink" title="二、原型链"></a>二、原型链</h2><h5 id="1-当访问heart1的属性时-先访问自身是否是否具有该属性"><a href="#1-当访问heart1的属性时-先访问自身是否是否具有该属性" class="headerlink" title="1.当访问heart1的属性时,先访问自身是否是否具有该属性;"></a>1.当访问heart1的属性时,先访问自身是否是否具有该属性;</h5><h5 id="2-若自身没有该属性-就会访问Heart-prototype是否拥有"><a href="#2-若自身没有该属性-就会访问Heart-prototype是否拥有" class="headerlink" title="2.若自身没有该属性,就会访问Heart.prototype是否拥有;"></a>2.若自身没有该属性,就会访问Heart.prototype是否拥有;</h5><h5 id="3-若Heart-prototype没有该属性-就会访问Object-prototype是否拥有"><a href="#3-若Heart-prototype没有该属性-就会访问Object-prototype是否拥有" class="headerlink" title="3.若Heart.prototype没有该属性,就会访问Object.prototype是否拥有;"></a>3.若Heart.prototype没有该属性,就会访问Object.prototype是否拥有;</h5><h5 id="3-若Object-prototype没有该属性-就会返回undefined"><a href="#3-若Object-prototype没有该属性-就会返回undefined" class="headerlink" title="3.若Object.prototype没有该属性,就会返回undefined"></a>3.若Object.prototype没有该属性,就会返回undefined</h5><h5 id="原型链为-heart1—-gt-Heart-prototype—-gt-Object-prototype—-gt-null"><a href="#原型链为-heart1—-gt-Heart-prototype—-gt-Object-prototype—-gt-null" class="headerlink" title="原型链为: heart1—&gt;Heart.prototype—&gt;Object.prototype—&gt;null"></a>原型链为: heart1—&gt;Heart.prototype—&gt;Object.prototype—&gt;null</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> <span class="token function-variable function">Heart</span> <span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span>age<span class="token punctuation">,</span>type</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
    <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token operator">=</span>name
    <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token operator">=</span>age

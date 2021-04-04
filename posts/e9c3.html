@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 
@@ -437,13 +437,15 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h2><ul>
-<li>数据驱动<ul>
+<li><p>数据驱动</p>
+<ul>
 <li> 数据响应式: 数据改变,视图更新,并且避免了DOM操作</li>
 <li> 双向绑定: 数据改变,视图更新;视图改变,数据也随之更新</li>
 <li> 数据驱动: 只要关心数据,没必要关心页面如何渲染</li>
 </ul>
 </li>
-<li>响应式的核心原理<ul>
+<li><p>响应式的核心原理</p>
+<ul>
 <li> Object.defineProperty<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 模拟vue中的data</span>
 <span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
   msg<span class="token operator">:</span> <span class="token string">'hello'</span>
@@ -498,8 +500,10 @@ Object<span class="token punctuation">.</span><span class="token function">defin
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
-<li>发布订阅模式和观察者模式<ul>
-<li>发布订阅模式<pre class="line-numbers language-js" data-language="js"><code class="language-js"> <span class="token keyword">class</span> <span class="token class-name">EventEmitter</span> <span class="token punctuation">&#123;</span>
+<li><p>发布订阅模式和观察者模式</p>
+<ul>
+<li><p>发布订阅模式</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"> <span class="token keyword">class</span> <span class="token class-name">EventEmitter</span> <span class="token punctuation">&#123;</span>
   <span class="token function">constructor</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token comment">// 创建一个没有原型的对象, 实践中心</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>subs <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -520,7 +524,8 @@ Object<span class="token punctuation">.</span><span class="token function">defin
      <span class="token punctuation">&#125;</span>
    <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>观察者模式<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 发布者 </span>
+<li><p>观察者模式</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 发布者 </span>
 <span class="token keyword">class</span> <span class="token class-name">Dep</span> <span class="token punctuation">&#123;</span>
 
   <span class="token function">constructor</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -558,7 +563,8 @@ Object<span class="token punctuation">.</span><span class="token function">defin
 dep<span class="token punctuation">.</span><span class="token function">addSub</span><span class="token punctuation">(</span>watcher<span class="token punctuation">)</span>
 dep<span class="token punctuation">.</span><span class="token function">notify</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>两者区别<ul>
+<li><p>两者区别</p>
+<ul>
 <li>发布订阅模式 发布者发布事件添加到事件中心,订阅者订阅事件中心的事件,如果有触发事件,没有则等待,两者之间有一个事件中心,互不影响 </li>
 <li>观察者模式 观察者订阅发布者,发布者触发通知事件,观察者更新, 两者相互影响</li>
 </ul>
@@ -611,6 +617,7 @@ dep<span class="token punctuation">.</span><span class="token function">notify</
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+
 <h3 id="2-2-observer"><a href="#2-2-observer" class="headerlink" title="2.2 observer"></a>2.2 observer</h3><ul>
 <li>把data中的属性转换成响应式的数据</li>
 <li>当data的属性是对象时,也转化成响应式的属性</li>
@@ -661,6 +668,7 @@ dep<span class="token punctuation">.</span><span class="token function">notify</
     <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
 
 
@@ -766,6 +774,7 @@ dep<span class="token punctuation">.</span><span class="token function">notify</
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="2-4-dep-发布者"><a href="#2-4-dep-发布者" class="headerlink" title="2.4 dep 发布者"></a>2.4 dep 发布者</h3><ul>
 <li>在observer的get中收集依赖,添加观察者 </li>
 <li>在set中通知所有观察者</li>
@@ -789,6 +798,7 @@ dep<span class="token punctuation">.</span><span class="token function">notify</
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
 <h3 id="2-5-watcher-订阅者-更新视图"><a href="#2-5-watcher-订阅者-更新视图" class="headerlink" title="2.5 watcher 订阅者 更新视图"></a>2.5 watcher 订阅者 更新视图</h3><ul>
 <li>更新视图</li>
@@ -821,6 +831,7 @@ dep<span class="token punctuation">.</span><span class="token function">notify</
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
@@ -929,18 +940,17 @@ dep<span class="token punctuation">.</span><span class="token function">notify</
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/e9c3.html">
+                <a href="/posts/1675.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="vue响应式原理">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="虚拟DOM">
                         
-                        <span class="card-title">vue响应式原理</span>
+                        <span class="card-title">虚拟DOM</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -950,9 +960,9 @@ dep<span class="token punctuation">.</span><span class="token function">notify</
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-12
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-01
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -965,7 +975,6 @@ dep<span class="token punctuation">.</span><span class="token function">notify</
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -984,13 +993,13 @@ dep<span class="token punctuation">.</span><span class="token function">notify</
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/7e2e.html">
+                <a href="/posts/bd4e.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="输入网址到浏览器渲染进行了什么">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="手写实现js的一些方法">
                         
-                        <span class="card-title">输入网址到浏览器渲染进行了什么</span>
+                        <span class="card-title">手写实现js的一些方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1001,18 +1010,18 @@ dep<span class="token punctuation">.</span><span class="token function">notify</
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-03
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/http/" class="post-category">
-                                    http
+                            <a href="/categories/interview/" class="post-category">
+                                    interview
                                 </a>
                             
-                            <a href="/categories/http/dns/" class="post-category">
-                                    dns
+                            <a href="/categories/interview/js/" class="post-category">
+                                    js
                                 </a>
                             
                             
@@ -1022,12 +1031,12 @@ dep<span class="token punctuation">.</span><span class="token function">notify</
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/http/">
-                        <span class="chip bg-color">http</span>
+                    <a href="/tags/interview/">
+                        <span class="chip bg-color">interview</span>
                     </a>
                     
-                    <a href="/tags/dns/">
-                        <span class="chip bg-color">dns</span>
+                    <a href="/tags/js/">
+                        <span class="chip bg-color">js</span>
                     </a>
                     
                 </div>

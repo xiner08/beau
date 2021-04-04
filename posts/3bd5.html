@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 
@@ -454,6 +454,7 @@ entry<span class="token operator">:</span><span class="token punctuation">&#123;
   others<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">'./src/test.js'</span><span class="token punctuation">,</span><span class="token string">'./src/test1.js'</span><span class="token punctuation">]</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+
 <h3 id="2-mode-模块打包的模式"><a href="#2-mode-模块打包的模式" class="headerlink" title="2. mode 模块打包的模式"></a>2. mode 模块打包的模式</h3><h5 id="默认值是-production-生产环境"><a href="#默认值是-production-生产环境" class="headerlink" title="默认值是 production 生产环境"></a>默认值是 production 生产环境</h5><p><img src="http://qiniu.xiner.work/blog/webpack_code.png"></p>
 <h3 id="3-output-出口文件"><a href="#3-output-出口文件" class="headerlink" title="3. output 出口文件"></a>3. output 出口文件</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js">output<span class="token operator">:</span><span class="token punctuation">&#123;</span>
   <span class="token comment">//生成的出口问件 目录,绝对路径</span>
@@ -479,16 +480,19 @@ entry<span class="token operator">:</span><span class="token punctuation">&#123;
   publicPath<span class="token operator">:</span><span class="token string">''</span>   
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+
 <h3 id="4-context-基础目录"><a href="#4-context-基础目录" class="headerlink" title="4. context 基础目录"></a>4. context 基础目录</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//上下文   项目打包的相对路径 必须是绝对路径</span>
  <span class="token comment">// process.cwd() 是当前Node.js进程执行时的文件夹目录——工作目录，保证了文件在不同</span>
  <span class="token comment">//的目录下执行时，路径始终不变</span>
  context<span class="token operator">:</span> process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 
 <h3 id="5-devtool-中的sourceMap"><a href="#5-devtool-中的sourceMap" class="headerlink" title="5. devtool 中的sourceMap"></a>5. devtool 中的sourceMap</h3><h5 id="sourceMap-打包后的文件和原文件之间的关系-如果开启-可以定位到原文件-不安全"><a href="#sourceMap-打包后的文件和原文件之间的关系-如果开启-可以定位到原文件-不安全" class="headerlink" title="sourceMap 打包后的文件和原文件之间的关系,如果开启,可以定位到原文件,不安全"></a>sourceMap 打包后的文件和原文件之间的关系,如果开启,可以定位到原文件,不安全</h5><ul>
 <li>mode==development 默认开启</li>
 <li>mode==production 一般不建议开启,若要开启使用 cheap-module-eval-source-map</li>
 </ul>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">devtool<span class="token operator">:</span><span class="token string">"cheap-module-source-map"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 
 <h2 id="二、module-模块转化-loader–需要安装"><a href="#二、module-模块转化-loader–需要安装" class="headerlink" title="二、module 模块转化  loader–需要安装"></a>二、module 模块转化  loader–需要安装</h2><h3 id="2-1-css-loader"><a href="#2-1-css-loader" class="headerlink" title="2.1 css-loader"></a>2.1 css-loader</h3><ul>
 <li>css-loader的简单使用</li>
@@ -526,6 +530,7 @@ entry<span class="token operator">:</span><span class="token punctuation">&#123;
   <span class="token punctuation">]</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+
 <h3 id="2-2-less-loader"><a href="#2-2-less-loader" class="headerlink" title="2.2 less-loader"></a>2.2 less-loader</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token operator">:</span><span class="token punctuation">&#123;</span>
   rules<span class="token operator">:</span><span class="token punctuation">[</span>
     <span class="token punctuation">&#123;</span>
@@ -543,6 +548,7 @@ entry<span class="token operator">:</span><span class="token punctuation">&#123;
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token punctuation">]</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
 <h3 id="2-3-postcss-loader-帮助css-适应css各种浏览器"><a href="#2-3-postcss-loader-帮助css-适应css各种浏览器" class="headerlink" title="2.3 postcss-loader 帮助css 适应css各种浏览器"></a>2.3 postcss-loader 帮助css 适应css各种浏览器</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token number">1.</span> 下载 postcss<span class="token operator">-</span>loader 和 autoprefixer
 <span class="token number">2.</span> 使用postcss<span class="token operator">-</span>loader 必须是在css<span class="token operator">-</span>loader之后
@@ -579,6 +585,7 @@ module<span class="token punctuation">.</span>exports<span class="token operator
   <span class="token punctuation">]</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+
 <h3 id="2-4-url-loader-处理文件-包含了file-loader-且比他更强大"><a href="#2-4-url-loader-处理文件-包含了file-loader-且比他更强大" class="headerlink" title="2.4 url-loader 处理文件(包含了file-loader,且比他更强大)"></a>2.4 url-loader 处理文件(包含了file-loader,且比他更强大)</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token operator">:</span><span class="token punctuation">&#123;</span>
   rules<span class="token operator">:</span><span class="token punctuation">[</span>
     <span class="token punctuation">&#123;</span>
@@ -603,6 +610,7 @@ module<span class="token punctuation">.</span>exports<span class="token operator
   <span class="token punctuation">]</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+
 <h2 id="三、-plugins-插件的使用"><a href="#三、-plugins-插件的使用" class="headerlink" title="三、 plugins 插件的使用"></a>三、 plugins 插件的使用</h2><h5 id="插件-作用于webpack整个打包生命周期的"><a href="#插件-作用于webpack整个打包生命周期的" class="headerlink" title="插件 作用于webpack整个打包生命周期的"></a>插件 作用于webpack整个打包生命周期的</h5><h3 id="3-1-clean-webpack-plugin-每次打包，清除打包后的文件"><a href="#3-1-clean-webpack-plugin-每次打包，清除打包后的文件" class="headerlink" title="3.1 clean-webpack-plugin 每次打包，清除打包后的文件"></a>3.1 clean-webpack-plugin 每次打包，清除打包后的文件</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token number">1.</span>下载 clean<span class="token operator">-</span>webpack<span class="token operator">-</span>plugin 
 npm install <span class="token operator">-</span><span class="token constant">D</span> clean<span class="token operator">-</span>webpack<span class="token operator">-</span>plugin 
 <span class="token number">2.</span>在webpack<span class="token punctuation">.</span>config<span class="token punctuation">.</span>js文件中引用
@@ -620,6 +628,7 @@ plugins<span class="token operator">:</span><span class="token punctuation">[</s
     <span class="token punctuation">]</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
 <h3 id="3-2-htmlWepbpackPlugin-自动生成html文件，并将打包后生成的js模块一如到html中"><a href="#3-2-htmlWepbpackPlugin-自动生成html文件，并将打包后生成的js模块一如到html中" class="headerlink" title="3.2 htmlWepbpackPlugin 自动生成html文件，并将打包后生成的js模块一如到html中"></a>3.2 htmlWepbpackPlugin 自动生成html文件，并将打包后生成的js模块一如到html中</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token number">1.</span>下载 htmlWepbpackPlugin
 npm install <span class="token operator">--</span>save<span class="token operator">-</span>dev html<span class="token operator">-</span>webpack<span class="token operator">-</span>plugin
@@ -641,6 +650,7 @@ plugins<span class="token operator">:</span><span class="token punctuation">[</s
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 <span class="token punctuation">]</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="3-3-mini-css-extract-plugin-抽离css"><a href="#3-3-mini-css-extract-plugin-抽离css" class="headerlink" title="3.3 mini-css-extract-plugin 抽离css"></a>3.3 mini-css-extract-plugin 抽离css</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token number">1.</span>下载 mini<span class="token operator">-</span>css<span class="token operator">-</span>extract<span class="token operator">-</span>plugin
 npm install <span class="token operator">--</span>save<span class="token operator">-</span>dev mini<span class="token operator">-</span>css<span class="token operator">-</span>extract<span class="token operator">-</span>plugin
 <span class="token number">2.</span> 加载模块
@@ -655,6 +665,7 @@ plugins<span class="token operator">:</span><span class="token punctuation">[</s
 <span class="token punctuation">]</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+
 <h2 id="四、devserver的使用-本地开发服务"><a href="#四、devserver的使用-本地开发服务" class="headerlink" title="四、devserver的使用 本地开发服务"></a>四、devserver的使用 本地开发服务</h2><h3 id="4-1-devserver的-简单的使用"><a href="#4-1-devserver的-简单的使用" class="headerlink" title="4.1 devserver的 简单的使用"></a>4.1 devserver的 简单的使用</h3><ul>
 <li>提高开发效率,更改代码后不需要重新打包</li>
 <li>打包后生成的文件不会放在dist目录下,而是放到内存中 从而提升速度</li>
@@ -668,6 +679,7 @@ devserver<span class="token operator">:</span><span class="token punctuation">&#
   post<span class="token operator">:</span><span class="token number">8080</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+
 <h3 id="4-2-本地mock数据-解决跨域"><a href="#4-2-本地mock数据-解决跨域" class="headerlink" title="4.2 本地mock数据,解决跨域"></a>4.2 本地mock数据,解决跨域</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
  * before webpack打包前的生命周期,可以直接模拟写接口
  * app 类似于express 搭建的服务
@@ -680,6 +692,7 @@ devserver<span class="token operator">:</span><span class="token punctuation">&#
     <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
 <h3 id="4-2-HMR-热模块替换-webpack自带的-保留之前操作的行为，浏览器不刷新-动态生效修改的代码"><a href="#4-2-HMR-热模块替换-webpack自带的-保留之前操作的行为，浏览器不刷新-动态生效修改的代码" class="headerlink" title="4.2 HMR 热模块替换 webpack自带的,保留之前操作的行为，浏览器不刷新,动态生效修改的代码"></a>4.2 HMR 热模块替换 webpack自带的,保留之前操作的行为，浏览器不刷新,动态生效修改的代码</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js">cosnt webpack<span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack'</span><span class="token punctuation">)</span>
 devserver<span class="token operator">:</span><span class="token punctuation">&#123;</span>
@@ -724,6 +737,7 @@ module<span class="token operator">:</span> <span class="token punctuation">&#12
   <span class="token punctuation">]</span>
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
 <h2 id="五、-babel-处理ES6"><a href="#五、-babel-处理ES6" class="headerlink" title="五、 babel 处理ES6+"></a>五、 babel 处理ES6+</h2><h3 id="5-1-babel-loader-的使用"><a href="#5-1-babel-loader-的使用" class="headerlink" title="5.1 babel-loader 的使用"></a>5.1 babel-loader 的使用</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token number">1.</span>下载 babel<span class="token operator">-</span>loader
 npm i <span class="token operator">-</span><span class="token constant">D</span> babel<span class="token operator">-</span>loader @babel<span class="token operator">/</span>core  @babel<span class="token operator">/</span>preset<span class="token operator">-</span>env 
@@ -770,6 +784,7 @@ module<span class="token operator">:</span><span class="token punctuation">&#123
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+
 <h3 id="5-2-配置react的使用"><a href="#5-2-配置react的使用" class="headerlink" title="5.2 配置react的使用"></a>5.2 配置react的使用</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token number">1.</span>下载
 npm i <span class="token operator">-</span><span class="token constant">D</span> @babel<span class="token operator">/</span>preset<span class="token operator">-</span>react
 <span class="token number">2.</span>使用 
@@ -803,6 +818,7 @@ module<span class="token operator">:</span><span class="token punctuation">&#123
   <span class="token punctuation">]</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+
 <h3 id="5-3-抽离babel的配置"><a href="#5-3-抽离babel的配置" class="headerlink" title="5.3 抽离babel的配置"></a>5.3 抽离babel的配置</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token number">1.</span>新建文件 <span class="token punctuation">.</span>babelrc
 <span class="token number">2.</span>添加内容
 <span class="token punctuation">&#123;</span>
@@ -828,6 +844,7 @@ module<span class="token operator">:</span><span class="token punctuation">&#123
 <span class="token number">3.</span> 去掉babel<span class="token operator">-</span>loader的 options
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+
 <h2 id="六、性能优化"><a href="#六、性能优化" class="headerlink" title="六、性能优化"></a>六、性能优化</h2><h3 id="6-1-优化开发体验-优化构建速度、优化使用体验、提升效率"><a href="#6-1-优化开发体验-优化构建速度、优化使用体验、提升效率" class="headerlink" title="6.1 优化开发体验(优化构建速度、优化使用体验、提升效率)"></a>6.1 优化开发体验(优化构建速度、优化使用体验、提升效率)</h3><ul>
 <li>include 缩小loader的查找方位 (exclude 排除哪里不查找)</li>
 </ul>
@@ -840,6 +857,7 @@ module<span class="token operator">:</span><span class="token punctuation">&#123
     <span class="token punctuation">&#125;</span>
   <span class="token punctuation">]</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
 <ul>
 <li>resolve 模块解析</li>
@@ -861,6 +879,7 @@ module<span class="token punctuation">.</span>exports<span class="token operator
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <ul>
 <li>使用Dllplugin 优化构建性能 需要手动引入<ul>
 <li>项⽬中引⼊了很多第三⽅库，这些库在很⻓的⼀段时间内，基本不会更新，打包的时候分开打包来提升打包速度，⽽DllPlugin动态链接库插件，其原理就是把⽹⻚依赖的基础模块抽离出来打包到dll⽂件中，当需要导⼊的模块存在于某个dll中时，这个模块不再被打包，⽽是去dll中获取。</li>
@@ -888,6 +907,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <span class="token string">"dev:dll"</span><span class="token operator">:</span> <span class="token string">"webpack --config ./build/webpack.dll.config.js"</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+
 <h3 id="6-2-优化输出质量-提升代码性能、减少代码体积"><a href="#6-2-优化输出质量-提升代码性能、减少代码体积" class="headerlink" title="6.2 优化输出质量(提升代码性能、减少代码体积)"></a>6.2 优化输出质量(提升代码性能、减少代码体积)</h3><ul>
 <li>externals 以哪种模式去加载所引入的额外的包<ul>
 <li>将引入的第三方模块的包,转化为cdn,不需要打包进入bundle文件,减小打包后的文件体积</li>
@@ -901,12 +921,14 @@ module<span class="token punctuation">.</span>exports <span class="token operato
   jquery<span class="token operator">:</span> <span class="token string">'jQuery'</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
+
 <ul>
 <li>publicPath 将静态资源打包到cdn服务器,减少 bundle的体积</li>
 </ul>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">output<span class="token operator">:</span><span class="token punctuation">&#123;</span>
   publicPath<span class="token operator">:</span><span class="token string">''</span>  <span class="token comment">//cdn服务地址</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 
 <ul>
 <li>压缩css</li>
@@ -926,6 +948,7 @@ plugins<span class="token operator">:</span><span class="token punctuation">[</s
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 <span class="token punctuation">]</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <ul>
 <li><p>抽离 css 使用mini-css-extract-plugin</p>
 </li>
@@ -948,6 +971,7 @@ plugins<span class="token operator">:</span><span class="token punctuation">[</s
       minifyCSS<span class="token operator">:</span> <span class="token boolean">true</span> 
     <span class="token punctuation">&#125;</span>
  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <ul>
 <li>tree shalking 清楚没有用到的css、js</li>
 <li>代码不会被执行</li>
@@ -988,6 +1012,7 @@ optimization<span class="token operator">:</span><span class="token punctuation"
 在<span class="token keyword">package</span><span class="token punctuation">.</span>json 文件加<span class="token punctuation">,</span> 不摇这些文件
 <span class="token string">"sideEffects"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">'*.css'</span><span class="token punctuation">,</span><span class="token string">'@babel/polyfill'</span><span class="token punctuation">]</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <ul>
 <li>代码分割 code spliting</li>
 </ul>
@@ -1028,6 +1053,7 @@ optimization<span class="token operator">:</span><span class="token punctuation"
 
 
 
+
 <h2 id="七、小问题总结"><a href="#七、小问题总结" class="headerlink" title="七、小问题总结"></a>七、小问题总结</h2><h3 id="7-1-webpack中chunk和bundle中的关系"><a href="#7-1-webpack中chunk和bundle中的关系" class="headerlink" title="7.1 webpack中chunk和bundle中的关系"></a>7.1 webpack中chunk和bundle中的关系</h3><blockquote><ul>
 <li>chunk 是webpack对源文件进行打包时,根据引用关系生成 chunk文件,并对其进行一些操作,不可以在浏览器运行</li>
 <li>处理好的chunk文件,最后输出成 bundle,可以直接再浏览器中运行</li>
@@ -1047,6 +1073,7 @@ optimization<span class="token operator">:</span><span class="token punctuation"
  target<span class="token operator">:</span> <span class="token string">"http://localhost:9092"</span>
  <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
 <h3 id="7-4-解决polyfill全局污染问题-使用闭包"><a href="#7-4-解决polyfill全局污染问题-使用闭包" class="headerlink" title="7.4  解决polyfill全局污染问题,使用闭包"></a>7.4  解决polyfill全局污染问题,使用闭包</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token number">1.</span>下载 @babel<span class="token operator">/</span>plugin<span class="token operator">-</span>transform<span class="token operator">-</span>runtime
 npm i <span class="token operator">-</span><span class="token constant">D</span> @babel<span class="token operator">/</span>plugin<span class="token operator">-</span>transform<span class="token operator">-</span>runtime
@@ -1082,6 +1109,7 @@ options<span class="token operator">:</span> <span class="token punctuation">&#1
   <span class="token punctuation">]</span>
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
 <h3 id="7-5-development和-production-区分打包"><a href="#7-5-development和-production-区分打包" class="headerlink" title="7.5 development和 production 区分打包"></a>7.5 development和 production 区分打包</h3><ul>
 <li>使用webpack-merge</li>
@@ -1235,6 +1263,7 @@ scripts<span class="token operator">:</span><span class="token punctuation">&#12
 拿到 cross<span class="token operator">-</span>env的值 process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+
 <h3 id="7-6-测量各个loader所花费的时间"><a href="#7-6-测量各个loader所花费的时间" class="headerlink" title="7.6 测量各个loader所花费的时间"></a>7.6 测量各个loader所花费的时间</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token number">1.</span>下载 speed<span class="token operator">-</span>measure<span class="token operator">-</span>webpack<span class="token operator">-</span>plugin
   npm i speed<span class="token operator">-</span>measure<span class="token operator">-</span>webpack<span class="token operator">-</span>plugin <span class="token operator">-</span><span class="token constant">D</span>
   <span class="token comment">//webpack.config.js</span>
@@ -1245,6 +1274,7 @@ scripts<span class="token operator">:</span><span class="token punctuation">&#12
   <span class="token punctuation">&#125;</span>
   module<span class="token punctuation">.</span>exports <span class="token operator">=</span> smp<span class="token punctuation">.</span><span class="token function">wrap</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
 <h3 id="7-7-分析webpack打包后的模块依赖关系"><a href="#7-7-分析webpack打包后的模块依赖关系" class="headerlink" title="7.7 分析webpack打包后的模块依赖关系"></a>7.7 分析webpack打包后的模块依赖关系</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token number">1.</span>下载 webpack<span class="token operator">-</span>bundle<span class="token operator">-</span>analyzer
   npm i speed<span class="token operator">-</span>measure<span class="token operator">-</span>webpack<span class="token operator">-</span>plugin <span class="token operator">-</span><span class="token constant">D</span>
@@ -1368,13 +1398,13 @@ scripts<span class="token operator">:</span><span class="token punctuation">&#12
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/9548.html">
+                <a href="/posts/9482.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="vue-router 实现">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="js面试题">
                         
-                        <span class="card-title">vue-router 实现</span>
+                        <span class="card-title">js面试题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1385,14 +1415,18 @@ scripts<span class="token operator">:</span><span class="token punctuation">&#12
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-02
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-28
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/vue/" class="post-category">
-                                    vue
+                            <a href="/categories/interview/" class="post-category">
+                                    interview
+                                </a>
+                            
+                            <a href="/categories/interview/js/" class="post-category">
+                                    js
                                 </a>
                             
                             
@@ -1402,8 +1436,12 @@ scripts<span class="token operator">:</span><span class="token punctuation">&#12
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue/">
-                        <span class="chip bg-color">vue</span>
+                    <a href="/tags/interview/">
+                        <span class="chip bg-color">interview</span>
+                    </a>
+                    
+                    <a href="/tags/js/">
+                        <span class="chip bg-color">js</span>
                     </a>
                     
                 </div>
