@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="服务端渲染ssr, HTML,CSS,JavaScript,VUE,REACT,node,webpack等">
+    <meta name="keywords" content="canvas, HTML,CSS,JavaScript,VUE,REACT,node,webpack等">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>服务端渲染ssr | Hearter</title>
+    <title>canvas | Hearter</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">服务端渲染ssr</h1>
+                    <h1 class="description center-align post-title">canvas</h1>
                 </div>
             </div>
         </div>
@@ -387,8 +387,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/vue/">
-                                <span class="chip bg-color">vue</span>
+                            <a href="/tags/html/">
+                                <span class="chip bg-color">html</span>
                             </a>
                         
                     </div>
@@ -399,8 +399,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/vue/" class="post-category">
-                                vue
+                            <a href="/categories/html/" class="post-category">
+                                html
                             </a>
                         
                     </div>
@@ -412,7 +412,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-12-25
+                    2021-04-09
                 </div>
                 
 
@@ -436,30 +436,35 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、单页面应用SPA的优缺点"><a href="#一、单页面应用SPA的优缺点" class="headerlink" title="一、单页面应用SPA的优缺点"></a>一、单页面应用SPA的优缺点</h2><ul>
-<li>优点<ul>
-<li>用户体验好</li>
-<li>开发效率高</li>
-<li>渲染性能好</li>
-<li>可维护性好</li>
-</ul>
-</li>
-<li>缺点<ul>
-<li>首屏加载慢<ul>
-<li>单页面使用js生成html渲染,需要等到js解析完毕,才可以看到页面首屏</li>
-</ul>
-</li>
-<li>不利于seo<ul>
-<li>单页面的html中是没有内容的,只有当js解析完毕,生成Html才能进行抓取,但是现在搜索引擎对这种方式抓取还不太好</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="二、同构应用"><a href="#二、同构应用" class="headerlink" title="二、同构应用"></a>二、同构应用</h2><h3 id="2-1-什么是同构应用"><a href="#2-1-什么是同构应用" class="headerlink" title="2.1 什么是同构应用"></a>2.1 什么是同构应用</h3><ul>
-<li>什么是同构应用<br>通过服务端渲染首屏,解决单页面应用首屏喧染慢以及不利于seo的问题,同时通过客户端渲染继续页面交互,而得到更好的客户体验,这中渲染方式为服务端渲染,也为同构渲染。这中渲染方式生成的应用,也是服务端渲染应用或同构应用</li>
-</ul>
-<h3 id="2-2-传统的服务端渲染"><a href="#2-2-传统的服务端渲染" class="headerlink" title="2.2 传统的服务端渲染"></a>2.2 传统的服务端渲染</h3>
+                <p>Html5 新增的标签,canvas 绘制图像,只是一个容器,需要操作js进行绘制</p>
+<h3 id="一、绘制一个简单的矩形"><a href="#一、绘制一个简单的矩形" class="headerlink" title="一、绘制一个简单的矩形"></a>一、绘制一个简单的矩形</h3><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>canvas</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>test1<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>600<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>600<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      这里的内容不显示
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>canvas</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+  <span class="token comment">// 获取到页面中的canvasTest</span>
+  <span class="token keyword">let</span> canvasTest <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'test1'</span><span class="token punctuation">)</span>
+  <span class="token comment">// 拿到画笔</span>
+  <span class="token keyword">let</span> ctx <span class="token operator">=</span> canvasTest<span class="token punctuation">.</span><span class="token function">getContext</span><span class="token punctuation">(</span><span class="token string">'2d'</span><span class="token punctuation">)</span>
+  <span class="token comment">// 绘制矩形 reat x、y、w、h</span>
+  ctx<span class="token punctuation">.</span><span class="token function">rect</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">)</span>
+  <span class="token comment">// 设置画笔颜色</span>
+  ctx<span class="token punctuation">.</span>fillStyle <span class="token operator">=</span> <span class="token string">"cyan"</span>
+  <span class="token comment">// 填充内容</span>
+  ctx<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment">// 描边的样式</span>
+  ctx<span class="token punctuation">.</span>strokeStyle <span class="token operator">=</span> <span class="token string">"blue"</span>
+  <span class="token comment">// 描边的大小</span>
+  ctx<span class="token punctuation">.</span>lineWidth <span class="token operator">=</span> <span class="token string">"50"</span>
+  <span class="token comment">// 对绘制的进行描边</span>
+  ctx<span class="token punctuation">.</span><span class="token function">stroke</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h3 id="二、绘制线段"><a href="#二、绘制线段" class="headerlink" title="二、绘制线段"></a>二、绘制线段</h3><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -485,7 +490,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xiner08.github.io/posts/c910.html">http://xiner08.github.io/posts/c910.html</a>
+                    <a href="http://xiner08.github.io/posts/1c21.html">http://xiner08.github.io/posts/1c21.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -523,8 +528,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/vue/">
-                                    <span class="chip bg-color">vue</span>
+                                <a href="/tags/html/">
+                                    <span class="chip bg-color">html</span>
                                 </a>
                             
                         </div>
@@ -572,6 +577,63 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/posts/eb3c.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="http面试题">
+                        
+                        <span class="card-title">http面试题</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-11
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/interview/" class="post-category">
+                                    interview
+                                </a>
+                            
+                            <a href="/categories/interview/http/" class="post-category">
+                                    http
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/interview/">
+                        <span class="chip bg-color">interview</span>
+                    </a>
+                    
+                    <a href="/tags/http/">
+                        <span class="chip bg-color">http</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/posts/4c7c.html">
                     <div class="card-image">
                         
@@ -588,9 +650,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -616,55 +678,6 @@
                     
                     <a href="/tags/css/">
                         <span class="chip bg-color">css</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/4905.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="vue源码---响应式原理">
-                        
-                        <span class="card-title">vue源码---响应式原理</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-10
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/vue/" class="post-category">
-                                    vue
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/vue/">
-                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
